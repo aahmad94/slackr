@@ -15,6 +15,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.8.1"
+
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
@@ -36,5 +37,12 @@
   "bugs": {
     "url": "https://github.com/aahmad94/wookiee/issues"
   },
-  "homepage": "https://github.com/aahmad94/wookiee#readme"
+  "homepage": "https://github.com/aahmad94/wookiee#readme",
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
+  "scripts": {
+    "postinstall": "webpack"
+  }
 }
