@@ -26,8 +26,8 @@ class Signup extends React.Component {
   render() {
     return(
       <div className='session-form'>
+        <h1>Sign in to your workplace</h1>
         <form>
-          <h1>Sign up</h1>
           <p>Enter your <strong>email address</strong> and <strong>password</strong></p>
 
           <input
