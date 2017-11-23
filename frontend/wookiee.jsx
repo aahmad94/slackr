@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { signup, login, logout } from './utils/session';
+import { postUser, postSession, deleteSession } from './utils/session';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   window.getState = store.getState;
-  window.signup = signup;
-  window.login = login;
-  window.logout = logout;
+  window.postUser = postUser;
+  window.login = postSession;
+  window.deleteSession = deleteSession;
 
   ReactDOM.render(<Root store = {store} />, root);
 });

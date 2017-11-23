@@ -4,8 +4,8 @@ class Signup extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayname: '',
       email: '',
+      displayname: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,37 +19,39 @@ class Signup extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createNewUser(this.state)
+    this.props.processForm(this.state)
       .then(() => this.props.history.push('/'));
   }
 
   render() {
     return(
       <div className='session-form'>
-        <h2>Sign Up!</h2>
         <form>
-          <label>Email:
-            <input
-              type='text'
-              value={this.state.email}
-              onChange={this.handleInput('email')}
-              />
-          </label>
-           <label>Display Name:
-             <input
-               type='text'
-               value={this.state.displayname}
-               onChange={this.handleInput('displayname')}
-            />
-           </label>
-           <label>Password:
-             <input
+          <h1>Sign up</h1>
+          <p>Enter your <strong>email address</strong> and <strong>password</strong></p>
+
+          <input
+            type='text'
+            placeholder='name@example.com'
+            value={this.state.email}
+            onChange={this.handleInput('email')}
+          /><br/>
+
+           <input
+             type='text'
+             placeholder='display name'
+             value={this.state.displayname}
+             onChange={this.handleInput('displayname')}
+          /><br/>
+
+           <input
                type='password'
+               placeholder='password'
                value={this.state.password}
                onChange={this.handleInput('password')}
-            />
-           </label>
-           <button onClick={this.handleSubmit}>Sign Up</button>
+            /><br/>
+
+          <button onClick={this.handleSubmit}>Continue &#x2192;</button>
         </form>
       </div>
     );

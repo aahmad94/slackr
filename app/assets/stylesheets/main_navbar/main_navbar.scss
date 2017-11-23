@@ -1,0 +1,49 @@
+.nav-bar {
+  background: #fff;
+  box-shadow: 0 1px 1px rgba(0,0,0,.1);
+  margin: 5px;
+  height: 65px;
+  z-index: 2;
+}
+
+.logo {
+  display: inline-block;
+  float: left;
+  position: relative;
+  padding-left: 15px;
+  top: 10px;
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.btn  {
+  display: inline-block;
+  position: relative;
+  float: right;
+  text-align: center;
+  top: 10px;
+  height: 20px;
+  width: 52px;
+  padding:  5px 10px 5px 10px;
+  margin: 5px;
+  background-color: white;
+  font-size: 14px;
+  text-decoration: none;
+  color: grey;
+  border: 1px solid black;
+  box-shadow: 0 0 0 0.5px #717274;
+  border-radius: 4px;
+}
+
+
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.welcome-message {
+  display: inline-block;
+  flex: right;
+  word-wrap: break-word;
+  padding-right: 5px;
+}
