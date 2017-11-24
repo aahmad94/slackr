@@ -45,7 +45,11 @@
 
 .welcome-message {
   display: inline-block;
-  flex: right;
+  position: relative;
+  top: 40px;
+  left: -118px;
+  font-size: 14px;
+  color: black;
   word-wrap: break-word;
   padding-right: 5px;
 }
