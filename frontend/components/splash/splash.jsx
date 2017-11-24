@@ -16,7 +16,8 @@ export default ({currentUser, login}) => {
   if (!currentUser) {
     return (
       <div>
-        <a className="btn" onClick={guestLogin}>Demo</a>
+        <img className="splash-img" src="https://a.slack-edge.com/52353/marketing/img/home/home_illo.png" />
+        <a className="demo-btn" onClick={guestLogin}>Get started</a>
       </div>
     );
   } else {

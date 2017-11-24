@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login  } from '../../actions/session';
-import GuestLogin from './guest';
+import GuestLogin from './splash';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser

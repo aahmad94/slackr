@@ -1,6 +1,8 @@
 body {
   background: #f9f9f9;
 }
+
+
 .session-form {
   display: flex;
   justify-content: center;
@@ -12,17 +14,16 @@ body {
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: 1px rgba(0,0,0,.25);
-  padding: 2rem 2rem 2rem 2rem;
-  width: 400px;
-  height: 300px;
+  padding: 3rem 3rem 3rem 3rem;
+  width: 20%;
+  height: 60%;
   margin: 0 auto;
 }
 
 .session-form  h1 {
   position: relative;
   font-size: 1rem;
-  text-align: right;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
   line-height: 2.5rem;
   letter-spacing: -1px;
   font-weight: 700;
@@ -31,8 +32,8 @@ body {
 
 .session-form p {
   font-size: 14px;
+  margin-bottom: 1rem;
   width: 258px;
-  margin-bottom: 0.5rem;
 }
 
 .session-form input {
@@ -41,7 +42,7 @@ body {
   width: 236px;
   line-height: 2rem;
   border: 1px solid #a0a0a2;
-  margin: 0 0 .5rem 0;
+  margin: 0 0 1rem 0;
   border-radius: 0.25rem;
   font-size: 20px;
 }

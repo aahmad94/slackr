@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import SignupContainer from './session/signup_container';
 import SigninContainer from './session/signin_container';
-import GuestLoginContainer from './guest/guest_container';
+import GuestLoginContainer from './splash/splash_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils.jsx';
 
 const App = () => (
