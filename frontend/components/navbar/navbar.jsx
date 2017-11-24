@@ -16,7 +16,7 @@ export default ({ currentUser, logout }) => {
 
   return (
     <header className="nav-bar">
-      <h2 className="logo">Wookiee</h2>
+      <Link to="/" className="logo">Wookiee</Link>
       <div>
         {display}
       </div>
