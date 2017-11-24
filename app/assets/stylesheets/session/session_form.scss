@@ -19,6 +19,7 @@ body {
 }
 
 .session-form  h1 {
+  position: relative;
   font-size: 1rem;
   text-align: right;
   margin-bottom: 0.5rem;
@@ -26,14 +27,12 @@ body {
   letter-spacing: -1px;
   font-weight: 700;
   font-size: 2em;
-  position: relative;
 }
 
 .session-form p {
   font-size: 14px;
   width: 258px;
   margin-bottom: 0.5rem;
-  word-wrap: break-word;
 }
 
 .session-form input {

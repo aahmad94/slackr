@@ -50,8 +50,8 @@ class Signup extends React.Component {
     return(
       <div className='session-form'>
         {this.renderErrors()}
-        <h1>Sign up</h1>
         <form>
+          <h1>Sign up</h1>
           <p>Enter your <strong>email address</strong>, <strong>display name</strong>, and <strong>password</strong></p>
 
           <input

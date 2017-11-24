@@ -9,7 +9,6 @@ export default ({currentUser, login}) => {
   const guestLogin = () => (
     login({
       email: 'guest@gmail.com',
-      display: 'guest',
       password: 'password'
     })
   );
@@ -20,5 +19,7 @@ export default ({currentUser, login}) => {
         <a className="btn" onClick={guestLogin}>Demo</a>
       </div>
     );
+  } else {
+    return null;
   }
 };
