@@ -5,6 +5,7 @@ class CreateChannelSubscriptions < ActiveRecord::Migration[5.1]
       t.integer :channel_id, null: false
       t.timestamps
     end
+    
     add_index :channel_subscriptions, :user_id
     add_index :channel_subscriptions, :channel_id
     add_index :channel_subscriptions, [:user_id, :channel_id], unique: true

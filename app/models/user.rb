@@ -9,7 +9,7 @@ class User < ApplicationRecord
   has_many :channels,
    through: :channel_subscriptions
   has_many :directmessages,
-    through: :directmessages_subscriptions
+    through: :directmessage_subscriptions
 
 
 
