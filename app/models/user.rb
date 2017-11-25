@@ -5,6 +5,7 @@ class User < ApplicationRecord
   validates :displayname, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
+
   attr_reader :password
 
   def self.find_by_credentials(email, password)

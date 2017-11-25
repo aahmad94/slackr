@@ -1,10 +1,41 @@
-.demo-btn {
-  float: left;
-  position: relative;
-  padding: 19px 40px 20px;
-  top: 450px;
-  left: 948px;
+.splash {
+  display: flex;
+  align-items: stretch;
+}
 
+.splash img {
+  position: absolute;
+  top: 160px;
+  left: 237px;
+}
+
+.splash h1 {
+  position: absolute;
+  top: 141px;
+  left: 973px;
+  font-size: 4.8rem;
+  font-family: "Times New Roman";
+  width: 576px;
+  height: 160px;
+}
+
+.splash p {
+  position: absolute;
+  top: 390px;
+  left: 973px;
+  font-size: 1rem;
+  width: 576px;
+  height: 160px;
+  line-height: 2rem;
+  color: #5b5e6d
+}
+.splash a {
+  /*display: block;*/
+  position: absolute;
+  top: 531px;
+  left: 974px;
+  padding: 19px 40px 20px;
+  /*width: 102px;*/
   line-height: 1.2rem;
   background: #1c299d;
   color: #fff;
@@ -16,4 +47,5 @@
   border: none;
   border-radius: .25rem;
   box-shadow: none;
+
 }
