@@ -6,10 +6,12 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
 
   has_many :messages
+
   has_many :channels,
    through: :channel_subscriptions
+
   has_many :directmessages,
-    through: :directmessage_subscriptions
+    through: :dm_subscriptions
 
 
 

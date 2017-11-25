@@ -40,11 +40,11 @@ ActiveRecord::Schema.define(version: 20171125183202) do
 
   create_table "dm_subscriptions", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "dm_id", null: false
+    t.integer "directmessage_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["dm_id"], name: "index_dm_subscriptions_on_dm_id"
-    t.index ["user_id", "dm_id"], name: "index_dm_subscriptions_on_user_id_and_dm_id", unique: true
+    t.index ["directmessage_id"], name: "index_dm_subscriptions_on_directmessage_id"
+    t.index ["user_id", "directmessage_id"], name: "index_dm_subscriptions_on_user_id_and_directmessage_id", unique: true
     t.index ["user_id"], name: "index_dm_subscriptions_on_user_id"
   end
 

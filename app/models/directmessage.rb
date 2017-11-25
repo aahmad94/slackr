@@ -1,13 +1,13 @@
 class Directmessage < ApplicationRecord
 
   has_many :users,
-    through: :directmessage_subscriptions
+    through: :dm_subscriptions
 
   has_many :messages,
-    as: :context,
+    as: :interface,
     dependent: :destroy
 
-  has_many :directmessage_subscriptions,
+  has_many :dm_subscriptions,
     dependent: :destroy
 
 end

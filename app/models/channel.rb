@@ -4,8 +4,8 @@ class Channel < ApplicationRecord
    through: :channel_subscriptions
 
   has_many :messages,
-  as: :interface,
-  dependent: :destroy
+    as: :interface,
+    dependent: :destroy
 
   has_many :channel_subscriptions,
   dependent: :destroy
