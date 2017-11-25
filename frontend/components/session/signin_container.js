@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { login  } from '../../actions/session';
 import Signin from './signin';
-import { receiveErrors } from '../../actions/session.';
+import { receiveErrors } from '../../actions/session';
 
 const mapStateToProps = (state) => ({
   errors: state.errors.session
