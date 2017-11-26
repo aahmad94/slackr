@@ -19,4 +19,8 @@ Rails.application.routes.draw do
     as: 'api_channel_join',
     defaults: { format: :json }
 
+  delete '/api/channels/remove_subscriber/:id' => 'api/channels#remove_subscriber',
+    as: 'api_channel_join',
+    defaults: { format: :json }
+
 end
