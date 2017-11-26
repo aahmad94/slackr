@@ -16,11 +16,11 @@ Rails.application.routes.draw do
 
   #channels
   post '/api/channels/add_subscriber/:id' => 'api/channels#add_subscriber',
-    as: 'api_channel_join',
+    as: 'api_channel_add_subscriber',
     defaults: { format: :json }
 
   delete '/api/channels/remove_subscriber/:id' => 'api/channels#remove_subscriber',
-    as: 'api_channel_join',
+    as: 'api_channel_remove_subscriber',
     defaults: { format: :json }
 
 end

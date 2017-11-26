@@ -6,7 +6,7 @@ export const createChannelMessage = (message, channelId) => (
   })
 );
 
-export const fetchChannelMessage = (channelId) => ({
+export const fetchChannelMessages = (channelId) => ({
   url: `/api/channels/${channelId}/messages`,
   method: 'GET'
 });
