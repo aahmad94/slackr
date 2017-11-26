@@ -1,5 +1,9 @@
 class Channel < ApplicationRecord
+  validates :channel_name, presence: true, uniqueness: true
 
+  has_many :channel_subscriptions,
+  dependent: :destroy
+  
   has_many :users,
    through: :channel_subscriptions
 
@@ -7,6 +11,4 @@ class Channel < ApplicationRecord
     as: :interface,
     dependent: :destroy
 
-  has_many :channel_subscriptions,
-  dependent: :destroy
 end

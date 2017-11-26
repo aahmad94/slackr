@@ -5,16 +5,19 @@ class User < ApplicationRecord
   validates :displayname, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :messages
+  has_many :channel_subscriptions,
+    dependent: :destroy
 
   has_many :channels,
-   through: :channel_subscriptions
+    through: :channel_subscriptions
+
+    has_many :dm_subscriptions,
+    dependent: :destroy
 
   has_many :directmessages,
     through: :dm_subscriptions
 
-
-
+    has_many :messages
 
   attr_reader :password
 
