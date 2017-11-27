@@ -3,7 +3,7 @@ import * as MessageUtils from '../utils/message';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 
-const receiveMessage = (message) => ({
+export const receiveMessage = (message) => ({
   type: RECEIVE_MESSAGE,
   message
 });
