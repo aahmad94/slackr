@@ -6,7 +6,9 @@ export const createChannelMessage = (message, channelId) => (
   })
 );
 
-export const fetchChannelMessages = (channelId) => ({
-  url: `/api/channels/${channelId}/messages`,
-  method: 'GET'
-});
+export const fetchChannelMessages = (channelId) => (
+  $.ajax({
+    url: `/api/channels/${channelId}/messages`,
+    method: 'GET'    
+  })
+);

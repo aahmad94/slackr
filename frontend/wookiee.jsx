@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import { postUser, postSession, deleteSession } from './utils/session';
+import { createChannelMessage, fetchChannelMessages } from './utils/message';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -24,6 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
   window.postUser = postUser;
   window.login = postSession;
   window.deleteSession = deleteSession;
+  window.createChannelMessage = createChannelMessage;
+  window.fetchChannelMessages = fetchChannelMessages;
+
 
   ReactDOM.render(<Root store = {store} />, root);
 });

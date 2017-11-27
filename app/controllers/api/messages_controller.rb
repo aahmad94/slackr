@@ -1,8 +1,6 @@
 class Api::MessagesController < ApplicationController
 
   def index
-    @message = Message.new(message_params)
-
     if params[:channel_id]
       @interface = Channel.find(params[:channel_id])
     elsif params[:directmessage_id]
@@ -23,8 +21,10 @@ class Api::MessagesController < ApplicationController
       @interface = Directmessage.find(params[:directmessage_id])
     end
 
+    @message.user = current_user
     @message.interface = @interface
     @message.save
+    render :show
 
   end
 
