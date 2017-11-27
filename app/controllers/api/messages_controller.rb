@@ -9,6 +9,7 @@ class Api::MessagesController < ApplicationController
 
     @messages = @interface.messages
     @users = @messages.map(&:user).uniq
+    render :index
 
   end
 

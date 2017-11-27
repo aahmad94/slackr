@@ -17,7 +17,7 @@ export const createChannelMessage = (message, channelId) => (dispatch) => (
   MessageUtils.createChannelMessage(message, channelId)
 );
 
-export const fetchChannelMessagesAndUsers = (channelId) => dispatch => (
+export const fetchChannelMessages = (channelId) => dispatch => (
   MessageUtils.fetchChannelMessages(channelId).then(
     (messages) => dispatch(receiveMessages(messages))
   )

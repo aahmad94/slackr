@@ -4,7 +4,8 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import { postUser, postSession, deleteSession } from './utils/session';
-import { createChannelMessage, fetchChannelMessages } from './utils/message';
+// import { createChannelMessage, fetchChannelMessages } from './utils/message';
+import { fetchChannelMessages } from './actions/message';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -24,8 +25,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.postUser = postUser;
   window.login = postSession;
+  window.dispatch = store.dispatch;
   window.deleteSession = deleteSession;
-  window.createChannelMessage = createChannelMessage;
   window.fetchChannelMessages = fetchChannelMessages;
 
 
