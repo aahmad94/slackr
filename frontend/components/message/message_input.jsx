@@ -3,9 +3,13 @@ import React, { Component } from 'react';
 export default class MessageInput extends Component {
   constructor(props) {
     super(props);
-    this.state = { body: '' };
+    this.state = { body: "" };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateMessage = this.updateMessage.bind(this);
+  }
+
+  componentDidMount () {
+    this.refs.input.focus();
   }
 
   handleSubmit(e) {
@@ -29,7 +33,9 @@ export default class MessageInput extends Component {
         onSubmit={e => this.handleSubmit(e)}
       >
         <input
+          ref='input'
           type="text"
+          value={this.state.body}
           placeholder="Message"
           onChange={e => this.updateMessage(e)}
         />

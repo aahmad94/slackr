@@ -6,6 +6,7 @@ import Root from './components/root';
 import { postUser, postSession, deleteSession } from './utils/session';
 // import { createChannelMessage, fetchChannelMessages } from './utils/message';
 import { fetchChannelMessages } from './actions/message';
+import { fetchChannels } from './actions/channels';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.deleteSession = deleteSession;
   window.fetchChannelMessages = fetchChannelMessages;
+  window.fetchChannels = fetchChannels;
 
 
   ReactDOM.render(<Root store = {store} />, root);

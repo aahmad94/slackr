@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { createChannelMessage } from '../../actions/message';
 import MessageInput from './message_input';
 
@@ -9,4 +10,5 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
                                              ownProps.match.params.channelId))
 });
 
-export default connect(null, mapDispatchToProps)(MessageInput);
+export default withRouter(
+  connect(null, mapDispatchToProps)(MessageInput));

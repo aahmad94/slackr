@@ -1,11 +1,9 @@
 import React from 'react';
 
-export default ({ user, message, showUserDisplay}) => (
+export default ({message}) => (
   <div>
-    <div onClick={() => showUserDisplay(user.id)}>
-      {user.displayname}
-      {new Date(message.createdAt).toLocaleString()}
+    <li>
       {message.body}
-    </div>
+    </li>
   </div>
 );
