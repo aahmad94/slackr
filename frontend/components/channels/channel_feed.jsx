@@ -7,7 +7,7 @@ class ChannelFeed extends Component {
   }
 
   componentDidMount() {
-
+    this.props.fetchChannels();
   }
 
   componentWillMount() {
@@ -19,7 +19,7 @@ class ChannelFeed extends Component {
   render () {
     return (
       <div>
-        <h1>Channel 4</h1>
+        <h4>{this.props.channels[this.props.match.params.channelId]}</h4>
         <ul>
           {
             this.props.messages.map(

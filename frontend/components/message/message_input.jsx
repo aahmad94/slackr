@@ -8,10 +8,6 @@ export default class MessageInput extends Component {
     this.updateMessage = this.updateMessage.bind(this);
   }
 
-  componentDidMount () {
-    this.refs.input.focus();
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     this.props.createChannelMessage(this.state).then(
@@ -33,7 +29,6 @@ export default class MessageInput extends Component {
         onSubmit={e => this.handleSubmit(e)}
       >
         <input
-          ref='input'
           type="text"
           value={this.state.body}
           placeholder="Message"
