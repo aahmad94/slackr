@@ -25,7 +25,7 @@ class Api::MessagesController < ApplicationController
     @message.user = current_user
     @message.interface = @interface
     @message.save
-    render :show
+    
 
   end
 

@@ -12,7 +12,7 @@ class ChannelFeed extends Component {
 
   componentWillMount() {
     this.props.fetchChannelMessages(1);
-    this.props.setSocket("hw");
+    this.props.setSocket("General");
   }
 
 
