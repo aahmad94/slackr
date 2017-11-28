@@ -1,7 +1,6 @@
 import { receiveMessage } from './message.js';
 
 export const setSocket = (channelName) => (dispatch) => {
-  // debugger;
   if (window.App.channel) {
     removeSocket();
   }
@@ -17,9 +16,7 @@ export const addSocket = (channelName, dispatch) => {
     channel: 'ChannelChannel',
     channel_name: channelName
   }, {
-    connected: () => {
-      console.log("connected");
-    },
+    connected: () => {},
     disconnected: () => {},
     received: (data) => {
       if (data.message) {
