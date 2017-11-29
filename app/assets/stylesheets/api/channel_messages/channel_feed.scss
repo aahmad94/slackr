@@ -1,11 +1,13 @@
 .cm-container {
-  display: inline-flex;
-  justify-content: space-between;
+  // display: display;
+  display: block;
   position: absolute;
+  float: right;
+  // justify-content: space-between;
   width: calc(100% - 220.8px);
-  height: calc(100% - 140px);
-  max-height: 100%;
+  height: calc(100% - 75px);
   overflow: auto;
+  padding-left: 220px;
 }
 
 .cm-container::-webkit-scrollbar {
@@ -27,6 +29,7 @@
     color: #717274;
     min-height: 36px;
 }
+
 .cm-container::-webkit-scrollbar-thumb:window-inactive {
 	background: #d9d9de;
 }
@@ -44,6 +47,10 @@
 .channel-title {
   margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.message-list ul:last-child {
+  padding-bottom: 50px;
 }
 
 .msg-item {

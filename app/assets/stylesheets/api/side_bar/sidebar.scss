@@ -1,12 +1,14 @@
 .sb-container {
-  display: inline-flex;
-  position: relative;
+  // display: inline-flex;
+  display: block;
+  float: left;
+  position: absolute;
   box-sizing: border-box;
-  justify-content: space-between;
-  flex-direction: column;
+  // justify-content: space-between;
+  // flex-direction: column;
   background-color: #4D394B;
   width: 220px;
-  height: 100%;
+  height: calc(100% - 75px);
 }
 
 .sb-channels p {
