@@ -1,0 +1,32 @@
+.sb-container {
+  display: inline-flex;
+  position: relative;
+  box-sizing: border-box;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #4D394B;
+  width: 11.50%;
+  height: 100%;
+}
+
+
+.sb-channels p {
+  font-size: 16px;
+  color: white;
+  padding: 0 12px 0 15px;
+}
+
+.sb-channels-link {
+  display: block;
+  width: 100%;
+  line-height: 1.5;
+  text-align: left;
+  // transition: color 0.1s ease-out;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 1;
+  color: white;
+  padding: 0 12px 0 15px;
+  text-overflow: ellipsis;
+  z-index: 100;
+}

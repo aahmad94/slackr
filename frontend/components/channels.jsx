@@ -15,14 +15,16 @@ export default class Channels extends Component {
       return <p>No channels have been created yet</p>;
     }
      return (
-       <div>
-         <h3>Channels</h3>
+       <div className="sb-channels">
+         <p>Channels</p>
          <ul>
           {
             this.props.channels.map((channel) => (
               <li key={channel.id}>
-                <Link to={`messages/channels/${channel.id}/`}>
-                  {channel.channel_name}
+                <Link
+                  className="sb-channels-link"
+                  to={`/messages/channels/${channel.id}/`}>
+                  { '# ' + channel.channel_name}
                 </Link>
               </li>
             ))

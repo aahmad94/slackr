@@ -27,24 +27,28 @@ class ChannelFeed extends Component {
       return (
         <div className='feed'>
           <h4 className='channel-title'>General</h4>
-          <ul>
-            {
-              this.props.messages.map(
-                (message) => (
-                  <Message
-                    key={message.id}
-                    user={this.props.users[1]}
-                    message={message}
-                    />
-                ))
-              }
+          <div className='message-list'>
+            <ul>
+              {
+                this.props.messages.map(
+                  (message) => (
+                    <Message
+                      key={message.id}
+                      user={this.props.users[1]}
+                      message={message}
+                      />
+                  ))
+                }
             </ul>
           </div>
+        </div>
         );
     } else {
-      <div>
+      return (
+        <div>
         loading...
-      </div>;
+      </div>
+      );
     }
   }
 

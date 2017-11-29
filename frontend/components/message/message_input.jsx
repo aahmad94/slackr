@@ -25,18 +25,19 @@ export default class MessageInput extends Component {
 
   render () {
     return (
-      <form
-        className='message-form'
-        onSubmit={e => this.handleSubmit(e)}
-      >
-        <input
-          type="text"
-          value={this.state.body}
-          placeholder="Message"
-          onChange={e => this.updateMessage(e)}
-        />
+      <div className='msg-form'>
+        <form
+          onSubmit={e => this.handleSubmit(e)}
+        >
+          <input
+            type="text"
+            value={this.state.body}
+            placeholder="Message"
+            onChange={e => this.updateMessage(e)}
+          />
 
-      </form>
+        </form>
+      </div>
     );
   }
 }

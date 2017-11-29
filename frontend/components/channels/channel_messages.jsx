@@ -4,8 +4,10 @@ import ChannelInputContainer from '../message/channel_input_container';
 
 // ChannelMessages
 export default (props) => (
-  <div>
-    <ChannelFeedContainer />
-    <ChannelInputContainer />
+  <div  className="cm-container">
+    <div className="cm-container2">
+      <ChannelFeedContainer />
+      <ChannelInputContainer />
+    </div>
   </div>
 );
