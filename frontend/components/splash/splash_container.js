@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { login  } from '../../actions/session';
 import GuestLogin from './splash';
 
@@ -9,4 +10,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   login: (formUser) => dispatch(login(formUser))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GuestLogin);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(GuestLogin));

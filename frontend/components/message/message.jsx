@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default ({message}) => (
+export default ({user, message}) => (
   <div>
     <li>
+      <p>{user.dipsplayname}</p>
       <p>{new Date(message.created_at).toLocaleString()}</p>
-      <h4>{message.body}</h4>
+      <p>{message.body}</p>
     </li>
   </div>
 );

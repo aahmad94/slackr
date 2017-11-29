@@ -16,7 +16,7 @@ class Signup extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
-      this.props.history.push('/');
+      this.props.history.push('/messages');
     }
   }
 
@@ -32,7 +32,7 @@ class Signup extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.login(user)
-      .then(() => this.props.history.push('/'));
+      .then(() => this.props.history.push('/messages'));
   }
 
   renderErrors() {

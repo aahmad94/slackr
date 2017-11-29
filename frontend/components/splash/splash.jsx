@@ -4,16 +4,17 @@ import { Link } from 'react-router-dom';
 
 
 
-export default ({currentUser, login}) => {
+export default (props) => {
 
   const guestLogin = () => (
-    login({
+    props.login({
       email: 'guest@gmail.com',
       password: 'password'
     })
+    .then(() => props.history.push('/messages'))
   );
 
-  if (!currentUser) {
+  if (!props.currentUser) {
     return (
       <div className="splash">
         <img src="https://a.slack-edge.com/52353/marketing/img/home/home_illo.png" />

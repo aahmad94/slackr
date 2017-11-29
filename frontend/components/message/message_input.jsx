@@ -26,6 +26,7 @@ export default class MessageInput extends Component {
   render () {
     return (
       <form
+        className='message-form'
         onSubmit={e => this.handleSubmit(e)}
       >
         <input
@@ -34,7 +35,7 @@ export default class MessageInput extends Component {
           placeholder="Message"
           onChange={e => this.updateMessage(e)}
         />
-        <input type='submit' value='Submit' />
+
       </form>
     );
   }

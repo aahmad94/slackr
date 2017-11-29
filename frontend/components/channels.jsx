@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default class Channels extends Component {
   constructor(props) {
@@ -21,9 +21,9 @@ export default class Channels extends Component {
           {
             this.props.channels.map((channel) => (
               <li key={channel.id}>
-                <NavLink to={`messages/channels/${channel.id}/`}>
+                <Link to={`messages/channels/${channel.id}/`}>
                   {channel.channel_name}
-                </NavLink>
+                </Link>
               </li>
             ))
           }

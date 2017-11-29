@@ -4,35 +4,49 @@ import Message from '../message/message';
 class ChannelFeed extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: true
+    };
   }
 
   componentDidMount() {
-    this.props.fetchChannels();
   }
 
   componentWillMount() {
-    this.props.fetchChannelMessages(1);
-    this.props.setSocket("General");
+    Promise.all([
+      this.props.fetchChannelUsers(1),
+      this.props.fetchChannelMessages(1),
+      this.props.fetchChannels(),
+      this.props.setSocket("General"),
+    ]).then(this.setState({loading: false}));
   }
 
 
   render () {
-    return (
+    if (!this.state.loading) {
+      return (
+        <div className='feed'>
+          <h4 className='channel-title'>General</h4>
+          <ul>
+            {
+              this.props.messages.map(
+                (message) => (
+                  <Message
+                    key={message.id}
+                    user={this.props.users[1]}
+                    message={message}
+                    />
+                ))
+              }
+            </ul>
+          </div>
+        );
+    } else {
       <div>
-        <h4>{this.props.channels[this.props.match.params.channelId]}</h4>
-        <ul>
-          {
-            this.props.messages.map(
-              (message) => (
-                <Message
-                  key={message.id}
-                  message={message}
-                />
-            ))
-          }
-        </ul>
-      </div>
-    );
+        loading...
+      </div>;
+    }
   }
+
 }
 export default ChannelFeed;

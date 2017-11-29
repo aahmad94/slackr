@@ -1,0 +1,19 @@
+.feed {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.channel-title {
+  display: inline-block;
+}
+
+.message-form {
+  display: flex;
+  justify-content: center;
+}
+
+.message-input {
+  line-height: 2rem;
+  color: #5b5e6d
+}

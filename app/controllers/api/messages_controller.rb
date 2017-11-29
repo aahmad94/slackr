@@ -9,7 +9,6 @@ class Api::MessagesController < ApplicationController
 
     @messages = @interface.messages
     @users = @messages.map(&:user).uniq
-    render :index
 
   end
 
@@ -25,7 +24,6 @@ class Api::MessagesController < ApplicationController
     @message.user = current_user
     @message.interface = @interface
     @message.save
-    
 
   end
 
