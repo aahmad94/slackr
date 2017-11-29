@@ -3,8 +3,7 @@
   justify-content: space-between;
   position: absolute;
   width: calc(100% - 220.8px);
-  height: calc(100% - 75px);
-  bottom: 50px;
+  height: calc(100% - 140px);
   max-height: 100%;
   overflow: auto;
 }
@@ -53,5 +52,5 @@
 }
 
 .msg-item:hover {
-  background-color: #f2f4f7;
+  background-color: #f9f9f9;
 }
