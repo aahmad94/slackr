@@ -1,9 +1,20 @@
 .msg-form {
+  // position: fixed;
+  align-content: center;
+  background: rgba(0,0,0,0);
+  margin-bottom: 0.5em;
 }
 
 .msg-form input {
   line-height: 1.46667;
-  padding-bottom: 9px;
-  padding-top: 9px;
-  border-radius: 5px;
+  position: fixed;
+  z-index: 100;
+  box-sizing: border-box;
+  padding: 10px;
+  height: 50px;
+  bottom: 10px;
+  width: 78.85%;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 9px 9px;
 }

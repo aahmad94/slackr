@@ -2,17 +2,56 @@
   display: inline-flex;
   justify-content: space-between;
   position: absolute;
+  width: calc(100% - 220.8px);
+  height: calc(100% - 75px);
+  bottom: 50px;
+  max-height: 100%;
+  overflow: auto;
+}
+
+.cm-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+.cm-container::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/* Handle */
+.cm-container::-webkit-scrollbar-thumb {
+  background-color: rgba(113,114,116,.5);
+    background-clip: padding-box!important;
+    border-radius: 3px;
+    color: #717274;
+    min-height: 36px;
+}
+.cm-container::-webkit-scrollbar-thumb:window-inactive {
+	background: #d9d9de;
 }
 
 .cm-container2 {
   display: block;
+  width: calc(100% - 220.8px);
   margin-left: 50px;
 }
 
+.feed {
+
+}
+
 .channel-title {
-  margin-bottom: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .msg-item {
-  padding-bottom: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.msg-item:hover {
+  background-color: #f2f4f7;
 }
