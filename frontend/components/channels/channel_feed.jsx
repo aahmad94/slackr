@@ -24,11 +24,11 @@ class ChannelFeed extends Component {
   componentWillMount() {
     const channelId = this.props.match.params.channelId;
     Promise.all([
-      this.props.fetchChannelUsers(this.props.match.params.channelId),
-      this.props.fetchChannelMessages(this.props.match.params.channelId),
+      this.props.fetchChannelUsers(channelId),
+      this.props.fetchChannelMessages(channelId),
       this.props.fetchChannels()
     ]).then(() => this.props.setSocket(
-      this.props.channels[this.props.match.params.channelId].channel_name))
+      this.props.channels[channelId].channel_name))
       .then(() => this.setState({loading: false}));
   }
 

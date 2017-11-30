@@ -20,7 +20,10 @@ ChannelSubscription.destroy_all
 ChannelSubscription.create!([
   { user_id: 1, channel_id: 1 },
   { user_id: 2, channel_id: 1 },
-  { user_id: 3, channel_id: 1 }
+  { user_id: 3, channel_id: 1 },
+  { user_id: 1, channel_id: 2 },
+  { user_id: 2, channel_id: 2 },
+  { user_id: 3, channel_id: 2 },
   ])
 
 Message.destroy_all
