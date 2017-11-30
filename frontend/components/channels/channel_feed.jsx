@@ -43,13 +43,18 @@ class ChannelFeed extends Component {
             <ul>
               {
                 this.props.messages.map(
-                  (message) => (
-                    <Message
-                    key={message.id}
-                    user={this.props.users[message.user_id]}
-                    message={message}
-                    />
-                  ))
+                  (message) => {
+                    if (this.props.match.params.channelId == message.interface_id) {
+                      return (
+                        <Message
+                        key={message.id}
+                        user={this.props.users[message.user_id]}
+                        message={message}
+                        />);
+                    } else {
+                      return null;
+                    }
+                  })
                 }
             </ul>
           </div>
