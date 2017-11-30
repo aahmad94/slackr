@@ -8,7 +8,7 @@ export default (state = {}, action) => {
     case RECEIVE_MESSAGE:
       return merge({}, state, {[action.message.id]: action.message});
     case RECEIVE_MESSAGES:
-      return merge({}, state, action.messages);
+      return merge({}, action.messages);
     default:
       return state;
   }

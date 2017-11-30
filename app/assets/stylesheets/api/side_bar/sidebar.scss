@@ -9,6 +9,7 @@
   background-color: #4D394B;
   width: 220px;
   height: calc(100% - 75px);
+  z-index: 100;
 }
 
 .sb-channels p {
@@ -32,6 +33,6 @@
   margin: 0 12px 0 15px;
 }
 
-.sb-channels li:hover {
+.sb-channels > ul li:hover {
   background-color: #3E313C;
 }

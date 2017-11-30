@@ -7,8 +7,8 @@ import { setSocket } from '../../actions/action_cable';
 import ChannelFeed from './channel_feed';
 
 const mapStateToProps = (state, ownProps) => ({
-  users: Object.values(state.entities.users),
-  channel: Object.values(state.entities.channels),
+  users: state.entities.users,
+  channels: state.entities.channels,
   messages: Object.values(state.entities.messages),
   currentUser: state.session.currentUser,
 });
