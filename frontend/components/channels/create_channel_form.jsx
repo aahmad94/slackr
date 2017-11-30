@@ -10,8 +10,9 @@ export default class CreateChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createChannel(this.state).then((newChannel) =>
-      this.props.history.push(`/messages/channels/${newChannel.id}/`));
+    this.props.createChannel(this.state).then((channel) => {
+      this.props.history.push(`/messages/channels/${channel.id}/`);
+    });
   }
 
   handleChange (e, type) {
@@ -23,14 +24,15 @@ export default class CreateChannelForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={e => this.handleSubmit(e)}>
-        <input
-          type="text"
-          placeholder="Create a channel"
-          onChange={e => this.update(e, 'channel_name')}
-        />
-
-      </form>
+      <div>
+        <form onSubmit={e => this.handleSubmit(e)}>
+          <input
+            type="text"
+            placeholder="Create a channel"
+            onChange={e => this.handleChange(e, 'channel_name')}
+          />
+        </form>
+      </div>
     );
   }
 }

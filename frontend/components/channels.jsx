@@ -16,7 +16,10 @@ export default class Channels extends Component {
     }
      return (
        <div className="sb-channels">
-         <p>Channels</p>
+         <Link to='/create_channel'>
+           <p className='create-channel'>Channels</p>
+           <span className="create-channel-tooltip-text"></span>
+         </Link>
          <ul>
           {
             this.props.channels.map((channel) => (

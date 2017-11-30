@@ -19,9 +19,10 @@ class Api::ChannelsController < ApplicationController
 
   def add_subscriber
     @channel = Channel.find(params[:id])
-    @channel.users << current_user
+    if !@channel.users.include?(current_user)
+      @channel.users << current_user
+    end
     render:show
-    CurrentUserRelayJob.perform_later(current_user)
   end
 
   def remove_subscriber

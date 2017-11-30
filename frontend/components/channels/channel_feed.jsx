@@ -14,9 +14,17 @@ class ChannelFeed extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this.props.match.params.channelId !== nextProps.match.params.channelId) {
-      this.props.fetchChannelMessages(nextProps.match.params.channelId);
-      this.props.fetchChannelUsers(nextProps.match.params.channelId);
+    const oldChannelId = this.props.match.params.channelId;
+    const currentChannelId = nextProps.match.params.channelId;
+    if (oldChannelId !== currentChannelId) {
+      Promise.all([
+        this.props.addSubscriberToChannel(currentChannelId).then(
+        this.props.fetchChannelUsers(currentChannelId)),
+        this.props.fetchChannelMessages(currentChannelId),
+        this.props.fetchChannels()
+      ]).then(() => this.props.setSocket(
+        this.props.channels[currentChannelId].channel_name))
+        .then(() => this.setState({loading: false}));
     }
 
   }
@@ -24,7 +32,8 @@ class ChannelFeed extends Component {
   componentWillMount() {
     const channelId = this.props.match.params.channelId;
     Promise.all([
-      this.props.fetchChannelUsers(channelId),
+      this.props.addSubscriberToChannel(channelId).then(
+      this.props.fetchChannelUsers(channelId)),
       this.props.fetchChannelMessages(channelId),
       this.props.fetchChannels()
     ]).then(() => this.props.setSocket(
@@ -34,7 +43,6 @@ class ChannelFeed extends Component {
 
 
   render () {
-    // debugger;
     if (!this.state.loading) {
       return (
         <div className='feed'>
@@ -63,7 +71,7 @@ class ChannelFeed extends Component {
     } else {
       return (
         <div>
-        loading...
+        There are no messages in this channel yet.
       </div>
       );
     }

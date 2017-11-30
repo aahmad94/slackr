@@ -17,8 +17,17 @@ export const fetchChannels = () => dispatch => (
   )
 );
 
-export const createChannel = channelData => dispatch => (
-  ChannelsUtils.createChannel(channelData).then(
+export const createChannel = channelName => dispatch => (
+  ChannelsUtils.createChannel(channelName).then(
+    channel => {
+    dispatch(receiveChannel(channel));
+    return channel;
+    }
+  )
+);
+
+export const addSubscriberToChannel = channelId => dispatch => (
+  ChannelsUtils.addSubscriberToChannel(channelId).then(
     channel => dispatch(receiveChannel(channel))
   )
 );
