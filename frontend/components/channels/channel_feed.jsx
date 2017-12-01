@@ -71,7 +71,7 @@ class ChannelFeed extends Component {
     } else {
       return (
         <div>
-        There are no messages in this channel yet.
+        Loading...
       </div>
       );
     }

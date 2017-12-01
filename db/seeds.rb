@@ -9,7 +9,7 @@
 User.destroy_all
 User.create!(email: "guest@gmail.com", displayname: "guest", password: "password")
 User.create!(email: "david@gmail.com", displayname: "david", password: "password")
-User.create!(email: "bob@gmail.com", displayname: "bob", password: "password")
+User.create!(email: "root@gmail.com", displayname: "root", password: "password")
 
 
 Channel.destroy_all
@@ -29,9 +29,9 @@ ChannelSubscription.create!([
 Message.destroy_all
 Message.create!([
   { user_id: 1, body: "Hello world!", interface_type: "Channel", interface_id: 1 },
-  { user_id: 2, body: "Hi there", interface_type: "Channel", interface_id: 1 },
-  { user_id: 3, body: "Wow...", interface_type: "Channel", interface_id: 1 },
+  { user_id: 2, body: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", interface_type: "Channel", interface_id: 1 },
+  { user_id: 3, body: "¯\\\_(ツ)_/¯", interface_type: "Channel", interface_id: 1 },
   { user_id: 1, body: "¯\\\_(ツ)_/¯", interface_type: "Channel", interface_id: 2 },
-  { user_id: 2, body: "¯\\\_(ツ)_/¯!", interface_type: "Channel", interface_id: 2 },
-  { user_id: 3, body: "¯\\\_(ツ)_/¯!", interface_type: "Channel", interface_id: 2 }
+  { user_id: 2, body: "¯\\\_(ツ)_/¯", interface_type: "Channel", interface_id: 2 },
+  { user_id: 3, body: "¯\\\_(ツ)_/¯", interface_type: "Channel", interface_id: 2 }
   ])
