@@ -16,7 +16,7 @@ export const addSocket = (channelName, dispatch) => {
     channel: 'ChannelChannel',
     channel_name: channelName
   }, {
-    connected: () => {console.log(`connected-${channelName}`);},
+    connected: () => {},
     disconnected: () => {},
     received: (data) => {
       if (data.message) {
