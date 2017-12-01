@@ -19,6 +19,9 @@ export default class Channels extends Component {
            <p>Channels</p>
 
          <ul>
+           <Link className="create-channel" to='/create_channel'>
+             <p>create</p>
+           </Link>
           {
             this.props.channels.map((channel) => {
               let channelSelector = "";
@@ -38,9 +41,6 @@ export default class Channels extends Component {
             })
           }
         </ul>
-        <Link className="link" to='/create_channel'>
-          <p>Create</p>
-        </Link>
       </div>
     );
   }
