@@ -1,28 +1,37 @@
 .splash {
-  display: block;
-  position: relative;
-}
-
-.splash img {
-  position: relative;
+  display: flex;
+  padding-top: 4%;
+  justify-content: center;
   top: 85px;
   left: 237px;
 }
 
+.splash img {
+  display: block;
+  position: relative;
+}
+
+.splash-info {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+}
+
 .splash h1 {
   position: relative;
-  bottom: 539px;
-  left: 973px;
+  // bottom: 539px;
+  // left: 973px;
   font-size: 4.8rem;
   font-family: "Times New Roman";
   width: 576px;
-  height: 160px;
+  // height: 160px;
+  bottom: 20px;
 }
 
 .splash p {
   position: relative;
-  bottom: 450px;
-  left: 973px;
+  // bottom: 450px;
+  // left: 973px;
   font-size: 1rem;
   width: 576px;
   height: 160px;
@@ -32,8 +41,8 @@
 .splash a {
   /*display: block;*/
   position: relative;
-  bottom: 452px;
-  left: 973px;
+  // bottom: 452px;
+  // left: 973px;
   padding: 19px 40px 20px;
   /*width: 102px;*/
   line-height: 1.2rem;
