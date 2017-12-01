@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Message from '../message/message';
+
 
 class ChannelFeed extends Component {
   constructor(props) {
@@ -7,10 +9,6 @@ class ChannelFeed extends Component {
     this.state = {
       loading: true
     };
-  }
-
-  componentDidMount() {
-    console.log(this.props.match.params);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -26,7 +24,6 @@ class ChannelFeed extends Component {
         this.props.channels[currentChannelId].channel_name))
         .then(() => this.setState({loading: false}));
     }
-
   }
 
   componentWillMount() {
@@ -41,13 +38,25 @@ class ChannelFeed extends Component {
       .then(() => this.setState({loading: false}));
   }
 
+  // scrollToBottom() {
+  //   const scrollHeight = this.messageList.scrollHeight;
+  //   const height = this.messageList.clientHeight;
+  //   const maxScrollTop = scrollHeight - height;
+  //   this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
+  // }
+
 
   render () {
     if (!this.state.loading) {
       return (
         <div className='feed'>
           <h4 className='channel-title'>{`#${this.props.channels[this.props.match.params.channelId].channel_name}`.toLowerCase()}</h4>
-          <div className='message-list'>
+          <div
+            className='message-list'
+            ref={(div) => {
+              this.messageList = div;
+            }}
+          >
             <ul>
               {
                 this.props.messages.map(
