@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div>
-      <Link to="/messages" className="logo">Wookiee</Link>
+      <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
       <a className="btn" onClick={logout}>Log Out</a>
     </div>
   ) : (
