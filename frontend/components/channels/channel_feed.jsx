@@ -90,6 +90,5 @@ class ChannelFeed extends Component {
       );
     }
   }
-
 }
 export default ChannelFeed;
