@@ -24,6 +24,9 @@ class ChannelFeed extends Component {
         this.props.channels[currentChannelId].channel_name))
         .then(() => this.setState({loading: false}));
     }
+    // if (nextProps.messages.length > this.props.messages.length) {
+    //   this.scrollToMesage();
+    // }
   }
 
   componentWillMount() {
@@ -45,29 +48,31 @@ class ChannelFeed extends Component {
   //   this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
   // }
 
+  // scrollToMesage() {
+  //   setTimeout(() => {
+  //     window.scrollTo(0,document.querySelector(".scroll-now").scrollHeight);
+  //   }, 1000);
+  // }
+
+  // ref={this.props.messages.length - 1 === idx ? (el) => (el.scrollIntoView()) : ""}
 
   render () {
     if (!this.state.loading) {
       return (
         <div className='feed'>
           <h4 className='channel-title'>{`#${this.props.channels[this.props.match.params.channelId].channel_name}`.toLowerCase()}</h4>
-          <div
-            className='message-list'
-            ref={(div) => {
-              this.messageList = div;
-            }}
-          >
+          <div className='message-list'>
             <ul>
               {
                 this.props.messages.map(
-                  (message) => {
+                  (message, idx) => {
                     if (this.props.match.params.channelId == message.interface_id) {
                       return (
                         <Message
-                        key={message.id}
-                        user={this.props.users[message.user_id]}
-                        message={message}
-                        />);
+                          key={message.id}
+                          user={this.props.users[message.user_id]}
+                          message={message}
+                          />);
                     } else {
                       return null;
                     }

@@ -25,8 +25,14 @@ export default class CreateChannelForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={e => this.handleSubmit(e)}>
+        <form
+          className="create-channel-form"
+          onSubmit={e => this.handleSubmit(e)}>
+          <label>
+            Channels
+          </label>
           <input
+            className="create-channel-input"
             type="text"
             placeholder="Create a channel"
             onChange={e => this.handleChange(e, 'channel_name')}
