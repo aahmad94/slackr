@@ -17,8 +17,12 @@
   padding-top: 20px;
 }
 
+.sb-current-user {
+  text-transform: capitalize;
+}
+
 .sb-channels {
-  padding-top: 5px;
+  padding-top: 1.5px;
 }
 
 .sb-current-user, .sb-channels p {
@@ -63,9 +67,11 @@
 }
 
 .create-channel {
+  text-decoration: none;
 }
 
 .create-channel p {
+  text-decoration: none;
   color: #d3d3d3;
 }
 
