@@ -61,13 +61,18 @@
 }
 
 .msg-item .user-display-name {
+  display: inline;
+  font-weight: 700;
+  font-size: 16px;
 
 }
 .msg-item .timestamp {
-
+  display: inline;
+  font-size: 14px;
+  color: #717274;
 }
 .msg-item .msg-body {
-
+  font-size: 16px;
 }
 
 .msg-item:hover {

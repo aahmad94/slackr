@@ -1,15 +1,19 @@
+body {
+  background-color: #f7f7f7;
+}
+
 .session-form {
   display: flex;
   justify-content: center;
   flex-direction: column;
   position: relative;
-  top: 37px;
+  top: 60px;
   align-items: center;
   border: 1px solid #e8e8e8;
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: 1px rgba(0,0,0,.25);
-  padding: 3rem 3rem 3rem 3rem;
+  padding: 6em 6em 6em 6em;
   width: 20%;
   height: 60%;
   margin: 0 auto;
