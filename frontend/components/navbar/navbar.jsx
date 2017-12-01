@@ -2,11 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // <p className="welcome-message">Hello, {currentUser.displayname}</p>
-export default ({ currentUser, logout }) => {
-  const display = currentUser ? (
+export default (props) => {
+
+  const display = props.currentUser ? (
     <div>
       <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
-      <a className="btn" onClick={logout}>Log Out</a>
+      <a className="btn" onClick={props.logout}>Log Out</a>
     </div>
   ) : (
     <div>
@@ -16,6 +17,7 @@ export default ({ currentUser, logout }) => {
     </div>
   );
 
+
   return (
     <header className="nav-bar">
       <div>
@@ -23,4 +25,5 @@ export default ({ currentUser, logout }) => {
       </div>
     </header>
   );
+
 };

@@ -31,7 +31,7 @@ class Signup extends React.Component {
     e.preventDefault();
     const formUser = this.state;
     this.props.createNewUser(formUser)
-      .then(() => this.props.history.push('/messages'));
+      .then(() => this.props.history.push('/messages/channels/1'));
   }
 
   renderErrors() {

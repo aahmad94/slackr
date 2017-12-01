@@ -14,11 +14,11 @@
 
 .sb-current-user-div {
   display: block;
-  padding-top: 20.5px;
+  padding-top: 20px;
 }
 
 .sb-channels {
-  padding-top: 10.5px;
+  padding-top: 5px;
 }
 
 .sb-current-user, .sb-channels p {
@@ -26,6 +26,10 @@
   // width: 100%;
   color: white;
   padding: 0 12px 0 15px;
+}
+
+.sb-current-user {
+  font-weight: 900;
 }
 
 .link {
@@ -42,13 +46,20 @@
   text-decoration: none;
   font-size: 16px;
   opacity: 1;
-  color: white;
   margin: 0 12px 0 15px;
+}
+
+.sb-channels-link p {
+  color: #d3d3d3;
 }
 
 .selected-channel {
   font-weight: 900;
   background-color: #4C9689;
+}
+
+.selected-channel p {
+  color: white;
 }
 
 .sb-channels > ul li:not(.selected-channel):hover {

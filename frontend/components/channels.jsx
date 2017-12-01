@@ -25,17 +25,13 @@ export default class Channels extends Component {
               if (this.props.history.location.pathname === `/messages/channels/${channel.id}/`) {
                 channelSelector = "selected-channel";
               }
-              // console.log("-----HISTORY------");
-              // console.log(this.props.history.location.pathname);
-              // console.log("-----CHANNEL.ID------");
-              // console.log(channel.id);
-              // debugger;
+
               return(
                 <li className={channelSelector} key={channel.id}>
                   <Link
                     className="sb-channels-link"
                     to={`/messages/channels/${channel.id}/`}>
-                    { '# ' + channel.channel_name}
+                    <p>{('# ' + channel.channel_name).toLowerCase()}</p>
                   </Link>
                 </li>
               );
@@ -43,7 +39,7 @@ export default class Channels extends Component {
           }
         </ul>
         <Link className="link" to='/create_channel'>
-          <p>Create Channel</p>
+          <p>Create</p>
         </Link>
       </div>
     );

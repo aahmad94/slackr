@@ -46,7 +46,7 @@ class ChannelFeed extends Component {
     if (!this.state.loading) {
       return (
         <div className='feed'>
-          <h4 className='channel-title'>{this.props.channels[this.props.match.params.channelId].channel_name}</h4>
+          <h4 className='channel-title'>{`#${this.props.channels[this.props.match.params.channelId].channel_name}`.toLowerCase()}</h4>
           <div className='message-list'>
             <ul>
               {
