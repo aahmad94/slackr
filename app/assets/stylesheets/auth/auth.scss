@@ -1,17 +1,17 @@
 .splash {
-  display: flex;
-  align-items: stretch;
+  display: block;
+  position: relative;
 }
 
 .splash img {
-  position: absolute;
-  top: 160px;
+  position: relative;
+  top: 85px;
   left: 237px;
 }
 
 .splash h1 {
-  position: absolute;
-  top: 141px;
+  position: relative;
+  bottom: 539px;
   left: 973px;
   font-size: 4.8rem;
   font-family: "Times New Roman";
@@ -20,8 +20,8 @@
 }
 
 .splash p {
-  position: absolute;
-  top: 390px;
+  position: relative;
+  bottom: 450px;
   left: 973px;
   font-size: 1rem;
   width: 576px;
@@ -31,9 +31,9 @@
 }
 .splash a {
   /*display: block;*/
-  position: absolute;
-  top: 531px;
-  left: 974px;
+  position: relative;
+  bottom: 452px;
+  left: 973px;
   padding: 19px 40px 20px;
   /*width: 102px;*/
   line-height: 1.2rem;
