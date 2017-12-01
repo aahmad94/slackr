@@ -19,9 +19,9 @@ class ChannelFeed extends Component {
     if (oldChannelId !== currentChannelId) {
       Promise.all([
         this.props.addSubscriberToChannel(currentChannelId).then(
-        this.props.fetchChannelUsers(currentChannelId)),
+        () => this.props.fetchChannelUsers(currentChannelId)),
         this.props.fetchChannelMessages(currentChannelId),
-        this.props.fetchChannels()
+        this.props.fetchChannels(),
       ]).then(() => this.props.setSocket(
         this.props.channels[currentChannelId].channel_name))
         .then(() => this.setState({loading: false}));
@@ -33,7 +33,7 @@ class ChannelFeed extends Component {
     const channelId = this.props.match.params.channelId;
     Promise.all([
       this.props.addSubscriberToChannel(channelId).then(
-      this.props.fetchChannelUsers(channelId)),
+      () => this.props.fetchChannelUsers(channelId)),
       this.props.fetchChannelMessages(channelId),
       this.props.fetchChannels()
     ]).then(() => this.props.setSocket(
