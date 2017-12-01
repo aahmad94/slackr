@@ -6,9 +6,9 @@ export default ({user, message}) => {
   } else {
     return (<div>
       <li className="msg-item">
-        <p>{user.displayname}</p>
-        <p>{new Date(message.created_at).toLocaleString()}</p>
-        <p>{message.body}</p>
+        <p className="user-display-name">{user.displayname} </p>
+        <p className="timestamp">{new Date(message.created_at).toLocaleString()}</p>
+        <p className="msg-body">{message.body}</p>
       </li>
     </div>
   );

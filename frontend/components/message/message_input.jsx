@@ -24,6 +24,10 @@ export default class MessageInput extends Component {
   }
 
   render () {
+    if (Object.keys(this.props.channels).length === 0) {
+      return null;
+    }
+    const channelName = this.props.channels[this.props.match.params.channelId].channel_name;
     return (
       <div className='msg-form'>
         <form
@@ -32,7 +36,7 @@ export default class MessageInput extends Component {
           <input
             type="text"
             value={this.state.body}
-            placeholder="Message"
+            placeholder={`Message #${channelName.toLowerCase()}`}
             onChange={e => this.updateMessage(e)}
           />
 

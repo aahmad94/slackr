@@ -16,7 +16,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    addSubscriberToChannel: (channelId) => 
+    addSubscriberToChannel: (channelId) =>
       dispatch(addSubscriberToChannel(channelId)),
     fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
     fetchChannels: () => dispatch(fetchChannels()),

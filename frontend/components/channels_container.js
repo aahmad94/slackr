@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import Channels from './channels';
 import { fetchChannels } from '../actions/channels';
 
@@ -11,4 +12,4 @@ const mapDispatchToProps = (dispatch) => ({
   fetchChannels: () => dispatch(fetchChannels())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Channels);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Channels));

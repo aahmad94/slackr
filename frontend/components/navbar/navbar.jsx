@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// <p className="welcome-message">Hello, {currentUser.displayname}</p>
 export default ({ currentUser, logout }) => {
   const display = currentUser ? (
     <div>
       <Link to="/messages" className="logo">Wookiee</Link>
-      <p className="welcome-message">Hello, {currentUser.displayname}</p>
       <a className="btn" onClick={logout}>Log Out</a>
     </div>
   ) : (
