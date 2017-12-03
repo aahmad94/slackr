@@ -1,29 +1,69 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// <p className="welcome-message">Hello, {currentUser.displayname}</p>
-export default (props) => {
+// export default (props) => {
+//
+//   const display = props.currentUser ? (
+//
+//     // {
+//     //   if (props.location.pathname === "/") {
+//     //     props.history.push("/messages/channels/1/")
+//     //   }
+//     // }
+//
+//     <div>
+//       <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
+//       <a className="btn" onClick={props.logout}>Log Out</a>
+//     </div>
+//   ) : (
+//     <div>
+//       <Link to="/" className="logo">Wookiee</Link>
+//       <Link className="btn" to="/signup">Sign up</Link>
+//       <Link className="btn" to="/login">Log in</Link>
+//     </div>
+//   );
+//
+//
+//
+//   return (
+//     <header className="nav-bar">
+//       <div>
+//         {display}
+//       </div>
+//     </header>
+//   );
+//
+// };
+//-----------------------------class componrnt--------------------------
+export default class NavBar extends React.Component {
 
-  const display = props.currentUser ? (
-    <div>
-      <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
-      <a className="btn" onClick={props.logout}>Log Out</a>
-    </div>
-  ) : (
-    <div>
-      <Link to="/" className="logo">Wookiee</Link>
-      <Link className="btn" to="/signup">Sign up</Link>
-      <Link className="btn" to="/login">Log in</Link>
-    </div>
-  );
+    render() {
+
+      if (this.props.location.pathname === "/" && this.props.currentUser) {
+        this.props.history.push("/messages/channels/1/");
+      }
+
+      const display = this.props.currentUser ? (
 
 
-  return (
-    <header className="nav-bar">
       <div>
-        {display}
+        <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
+        <a className="btn" onClick={this.props.logout}>Log Out</a>
       </div>
-    </header>
-  );
+    ) : (
+      <div>
+        <Link to="/" className="logo">Wookiee</Link>
+        <Link className="btn" to="/signup">Sign up</Link>
+        <Link className="btn" to="/login">Log in</Link>
+      </div>
+    );
 
-};
+    return (
+      <header className="nav-bar">
+        <div>
+          {display}
+        </div>
+      </header>
+    );
+  }
+}
