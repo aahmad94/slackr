@@ -147,4 +147,4 @@ class ChannelFeed extends Component {
 
 Channels are live chat rooms available to all users that have signed up for Wookiee. A user may join and switch between channels by clicking on the respective channel name in the sidebar:
 
-![channels] (https://github.com/aahmad94/wookiee/blob/master/docs/wookies-channels.png)
+![channels](https://github.com/aahmad94/wookiee/blob/master/docs/wookies-channels.png)
