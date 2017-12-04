@@ -37,33 +37,34 @@ import { Link } from 'react-router-dom';
 //-----------------------------class componrnt--------------------------
 export default class NavBar extends React.Component {
 
-    render() {
+  render() {
 
-      if (this.props.location.pathname === "/" && this.props.currentUser) {
-        this.props.history.push("/messages/channels/1/");
-      }
+    // if (this.props.location.pathname === "/" && this.props.currentUser) {
+    //   this.props.history.push("/messages/channels/1/");
+    //   console.log(this.props);
+    // }
 
-      const display = this.props.currentUser ? (
+    const display = this.props.currentUser ? (
 
 
+    <div>
+      <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
+      <a className="btn" onClick={this.props.logout}>Log Out</a>
+    </div>
+  ) : (
+    <div>
+      <Link to="/" className="logo">Wookiee</Link>
+      <Link className="btn" to="/signup">Sign up</Link>
+      <Link className="btn" to="/login">Log in</Link>
+    </div>
+  );
+
+  return (
+    <header className="nav-bar">
       <div>
-        <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
-        <a className="btn" onClick={this.props.logout}>Log Out</a>
+        {display}
       </div>
-    ) : (
-      <div>
-        <Link to="/" className="logo">Wookiee</Link>
-        <Link className="btn" to="/signup">Sign up</Link>
-        <Link className="btn" to="/login">Log in</Link>
-      </div>
-    );
-
-    return (
-      <header className="nav-bar">
-        <div>
-          {display}
-        </div>
-      </header>
-    );
+    </header>
+  );
   }
 }

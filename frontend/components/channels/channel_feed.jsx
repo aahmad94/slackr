@@ -41,13 +41,6 @@ class ChannelFeed extends Component {
       .then(() => this.setState({loading: false}));
   }
 
-  // scrollToBottom() {
-  //   const scrollHeight = this.messageList.scrollHeight;
-  //   const height = this.messageList.clientHeight;
-  //   const maxScrollTop = scrollHeight - height;
-  //   this.messageList.scrollTop = maxScrollTop > 0 ? maxScrollTop : 0;
-  // }
-
   // scrollToMesage() {
   //   setTimeout(() => {
   //     window.scrollTo(0,document.querySelector(".scroll-now").scrollHeight);
