@@ -27,7 +27,6 @@ class ChannelFeed extends Component {
   }
 
   componentWillMount() {
-    console.log("----COMPONENT WIILL MOUNT------");
     const channelId = this.props.match.params.channelId;
     Promise.all([
       this.props.addSubscriberToChannel(channelId).then(
@@ -40,11 +39,8 @@ class ChannelFeed extends Component {
   }
 
   componentDidUpdate() {
-    console.log("----COMPONENT DID UPDATE-----");
 
-    console.log("----OUTSIDE CONDITIONAL----");
     if (!this.state.loading) {
-      console.log("----SCROLL TO BOTTOM----");
       this.scrollToBottom();
     }
   }
