@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Message from '../message/message';
+import Message from '../message/message'; 
 
 
 class ChannelFeed extends Component {
@@ -24,12 +24,10 @@ class ChannelFeed extends Component {
         this.props.channels[currentChannelId].channel_name))
         .then(() => this.setState({loading: false}));
     }
-    // if (nextProps.messages.length > this.props.messages.length) {
-    //   this.scrollToMesage();
-    // }
   }
 
   componentWillMount() {
+    console.log("----COMPONENT WIILL MOUNT------");
     const channelId = this.props.match.params.channelId;
     Promise.all([
       this.props.addSubscriberToChannel(channelId).then(
@@ -41,13 +39,19 @@ class ChannelFeed extends Component {
       .then(() => this.setState({loading: false}));
   }
 
-  // scrollToMesage() {
-  //   setTimeout(() => {
-  //     window.scrollTo(0,document.querySelector(".scroll-now").scrollHeight);
-  //   }, 1000);
-  // }
+  componentDidUpdate() {
+    console.log("----COMPONENT DID UPDATE-----");
 
-  // ref={this.props.messages.length - 1 === idx ? (el) => (el.scrollIntoView()) : ""}
+    console.log("----OUTSIDE CONDITIONAL----");
+    if (!this.state.loading) {
+      console.log("----SCROLL TO BOTTOM----");
+      this.scrollToBottom();
+    }
+  }
+
+  scrollToBottom() {
+    this.el.scrollIntoView({ behaviour: 'smooth' });
+  }
 
   render () {
     if (!this.state.loading) {
@@ -71,6 +75,7 @@ class ChannelFeed extends Component {
                     }
                   })
                 }
+              <div ref={el => { this.el = el; }} />
             </ul>
           </div>
         </div>
