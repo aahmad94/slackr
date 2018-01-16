@@ -11,11 +11,19 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
 
+    
     #channels
     resources :channels, except: [:new, :edit] do
       resources :messages, only: [:create, :index]
       resources :users, only: :index
     end
+
+    #rooms
+    resources :rooms, only: [:index, :create] do
+      resources :messages, only: [:create, :index]
+      resources :users, only: :index
+    end
+
   end
 
   #channels
