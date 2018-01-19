@@ -18,8 +18,8 @@ Rails.application.routes.draw do
       resources :users, only: :index
     end
 
-    #rooms
-    resources :rooms, only: [:index, :create] do
+    #directmessages
+    resources :directmessages, only: [:index, :create] do
       resources :messages, only: [:create, :index]
       resources :users, only: :index
     end

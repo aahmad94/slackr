@@ -7,7 +7,7 @@ var devPlugins = []; // if using any plugins for development
 var prodPlugins = [
   new webpack.DefinePlugin({
     'process.env': {
-      'NODE_ENV': JSON.stringify('production')
+      'NODE_ENV': JSON.stringify('development')
     }
   }),
   new webpack.optimize.UglifyJsPlugin({
