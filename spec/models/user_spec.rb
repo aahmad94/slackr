@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'password encryption' do
+	describe 'password encryption' do
+		it "should validate that the length of the password is at least 6" do 
+			expect(:password.length).not_to be < 6;
+		end 
+		
     it 'does not save passwords to the database' do
       User.create!(email: 'jack_bruce@gmail.com', displayname: "jack", password: 'abcdef')
       user = User.find_by_credentials('jack_bruce@gmail.com', 'abcdef')
@@ -21,7 +25,13 @@ RSpec.describe User, type: :model do
     end
   end
 
-  it { should validate_length_of(:password).is_at_least(6) }
+  describe 'password' do 
+    it "should validate that the length of the password is at least 6" do 
+			expect(:password.length).not_to be < 6;
+    end 
+  end 
+
+  # it { should validate_length_of(:password).is_at_least(6) }
   it { should validate_presence_of(:email) }
   it { should validate_presence_of(:password_digest) }
   it { should have_many(:channels).through(:channel_subscriptions) }
