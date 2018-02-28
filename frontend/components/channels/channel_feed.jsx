@@ -26,7 +26,7 @@ class ChannelFeed extends Component {
     }
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const channelId = this.props.match.params.channelId;
     Promise.all([
       this.props.addSubscriberToChannel(channelId).then(
