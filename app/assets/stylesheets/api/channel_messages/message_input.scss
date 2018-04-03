@@ -1,8 +1,13 @@
 .msg-form {
-  // position: fixed;
+  z-index: 100;
+  position: fixed;
+  bottom: 0;
+
+  background: #f9f9f9;
+  width: 78.85%;
+  height: 20px;
+
   align-content: center;
-  background: rgba(0,0,0,0);
-  margin-bottom: 0.5em;
 }
 
 .msg-form input {
