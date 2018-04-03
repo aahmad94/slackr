@@ -11,7 +11,8 @@ export default (props) => {
       email: 'guest@gmail.com',
       password: 'password'
     })
-    .then(() => props.history.push('/messages'))
+      .then(() => props.addSubscriberToChannel(1))
+      .then(() => props.history.push('/messages/channels/1/'))
   );
 
   if (!props.currentUser) {

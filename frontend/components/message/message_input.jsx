@@ -31,15 +31,13 @@ export default class MessageInput extends Component {
     return (
       <div className='msg-form'>
         <form
-          onSubmit={e => this.handleSubmit(e)}
-        >
+          onSubmit={e => this.handleSubmit(e)}>
           <input
             type="text"
             value={this.state.body}
             placeholder={`Message #${channelName.toLowerCase()}`}
             onChange={e => this.updateMessage(e)}
           />
-
         </form>
       </div>
     );
