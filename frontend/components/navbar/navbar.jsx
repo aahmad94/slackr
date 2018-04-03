@@ -45,19 +45,17 @@ export default class NavBar extends React.Component {
     // }
 
     const display = this.props.currentUser ? (
-
-
-    <div>
-      <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
-      <a className="btn" onClick={this.props.logout}>Log Out</a>
-    </div>
-  ) : (
-    <div>
-      <Link to="/" className="logo">Wookiee</Link>
-      <Link className="btn" to="/signup">Sign up</Link>
-      <Link className="btn" to="/login">Log in</Link>
-    </div>
-  );
+      <div className="nav-btns">
+        <Link to="/messages/channels/1/" className="logo">Wookiee</Link>
+        <a className="btn" onClick={this.props.logout}>Log Out</a>
+      </div>
+    ) : (
+      <div className="nav-btns">
+        <Link to="/" className="logo">Wookiee</Link>
+        <Link className="btn" to="/signup">Sign up</Link>
+        <Link className="btn" to="/login">Log in</Link>
+      </div>
+    );
 
   return (
     <header className="nav-bar">
