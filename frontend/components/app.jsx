@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import NavBarContainer from './navbar/navbar_container';
 import SignupContainer from './session/signup_container';
 import SigninContainer from './session/signin_container';
-import GuestLoginContainer from './splash/splash_container';
+import GuestLoginContainer from './auth_components/splash_container';
 import { AuthRoute, ProtectedRoute } from '../utils/route_utils.jsx';
 import ChannelMessages from './channels/channel_messages';
 import SideBar from './side_bar';
