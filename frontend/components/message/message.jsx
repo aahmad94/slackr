@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({user, message, shouldScroll}) => {
+export default ({user, message}) => {
   if (!user) {
     return (<div></div>);
   } else {
