@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchChannelMessages } from '../../actions/message';
-import { fetchChannels } from '../../actions/channels';
-import { fetchChannelUsers } from '../../actions/users';
-import { addSubscriberToChannel } from '../../actions/channels';
-import { setSocket } from '../../actions/action_cable';
+import { fetchChannelMessages } from '../../../actions/message';
+import { fetchChannels } from '../../../actions/channels';
+import { fetchChannelUsers } from '../../../actions/users';
+import { addSubscriberToChannel } from '../../../actions/channels';
+import { setSocket } from '../../../actions/action_cable';
 import ChannelFeed from './channel_feed';
 
 const mapStateToProps = (state, ownProps) => ({

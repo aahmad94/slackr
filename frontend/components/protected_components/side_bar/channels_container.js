@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import Channels from './channels';
-import { fetchChannels } from '../actions/channels';
+import { fetchChannels } from '../../../actions/channels';
 
 const mapStateToProps = (state) => ({
   channels: Object.values(state.entities.channels),

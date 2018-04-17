@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createChannelMessage } from '../../actions/message';
-import { fetchChannels } from '../../actions/channels';
+import { createChannelMessage } from '../../../actions/message';
+import { fetchChannels } from '../../../actions/channels';
 import MessageInput from './message_input';
 
 const mapStateToProps = (state) => ({
