@@ -26,3 +26,9 @@ export const removeSubscriberFromChannel = channelId => (
     method: 'DELETE'
   })
 );
+
+export const searchChannels = query => (
+  $.ajax({
+    url: `api/channels/search/${query}`
+  })
+);
