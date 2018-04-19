@@ -12,3 +12,9 @@ class Channel < ApplicationRecord
     dependent: :destroy
 
 end
+
+def self.search(query)
+    self.where("channelname ILIKE ? OR displayname ILIKE ?",
+               "%#{query}%",
+               "%#{query}%")
+end

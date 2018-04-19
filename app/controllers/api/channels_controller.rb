@@ -5,6 +5,11 @@ class Api::ChannelsController < ApplicationController
     return :index
   end
 
+  def search
+    @channels = Channel.search params[:query]
+    render :index
+  end
+
   def create
     @channel = Channel.new(channel_params)
     if @channel.save
