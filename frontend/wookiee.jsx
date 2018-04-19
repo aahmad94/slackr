@@ -3,15 +3,18 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-document.addEventListener('DOMContentLoaded', () => {
+import * as ChannelsActions from './actions/channels';
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  
   var http = require("http");
-    setInterval(function() {
+  setInterval(function() {
     http.get("http://wookiee.herokuapp.com");
   }, 300000); // every 5 minutes (300000)
-
+  
   let preloadedState = {};
-
+  
   if (window.currentUser) {
     preloadedState = {
       session: {
@@ -19,10 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     };
   }
-
+  
   const store = configureStore(preloadedState);
   const root = document.getElementById('root');
-
+  
+  // tests here
+  window.store = store;
+  window.searchChannels = ChannelsActions.searchChannels;
 
   ReactDOM.render(<Root store = {store} />, root);
 });

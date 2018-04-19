@@ -6,7 +6,9 @@ class Api::ChannelsController < ApplicationController
   end
 
   def search
-    @channels = Channel.search params[:query]
+    p "-------------------SEARCHING---------------------"
+    p params[:query]
+    @channels = Channel.search params[:query] 
     render :index
   end
 
@@ -23,14 +25,16 @@ class Api::ChannelsController < ApplicationController
   # end
 
   def add_subscriber
+    p "-------------------ADDING SUBSCRIBER---------------------"
     @channel = Channel.find(params[:id])
     if !@channel.users.include?(current_user)
       @channel.users << current_user
     end
     render:show
   end
-
+  
   def remove_subscriber
+    p "-------------------REMOVING SHOW---------------------"
     @channel = Channel.find(params[:id])
     @channel.users.delete(current_user)
     @channel.delete if @channel.users.empty?

@@ -10,11 +10,10 @@ class Channel < ApplicationRecord
   has_many :messages,
     as: :interface,
     dependent: :destroy
+    
+  def self.search(query)
+    self.where("channel_name ILIKE ?",
+                "%#{query}%")
+  end
 
-end
-
-def self.search(query)
-    self.where("channelname ILIKE ? OR displayname ILIKE ?",
-               "%#{query}%",
-               "%#{query}%")
 end

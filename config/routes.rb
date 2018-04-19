@@ -35,4 +35,8 @@ Rails.application.routes.draw do
     as: 'api_channel_remove_subscriber',
     defaults: { format: :json }
 
+  get '/api/channels/search/:query' => 'api/channels#search',
+    as: 'api_channel_search',
+    defaults: { format: :json }
+
 end
