@@ -28,6 +28,7 @@ export const createChannel = channelName => dispatch => (
   )
 );
 
+// join channel
 export const addSubscriberToChannel = channelId => dispatch => (
   ChannelsUtils.addSubscriberToChannel(channelId).then(
     channel => dispatch(receiveChannel(channel))
