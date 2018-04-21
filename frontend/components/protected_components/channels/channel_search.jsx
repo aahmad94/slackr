@@ -47,16 +47,17 @@ export default class ChannelSearch extends React.Component {
         className='search'
         onKeyDown={e => this.handleKeyDown(e)}>
         <h1 className='modal-header'>
-          <span>Join a Channel</span>
+          <span>Join a channel</span>
           <i
             className="fa fa-times"
             aria-hidden="true"
             onClick={closeModal}></i>
         </h1>
         <input
+          className="channel-search-input"
           ref='searchBox'
           type='text'
-          placeholder='Search...'
+          placeholder='Enter channel name'
           value={query}
           onChange={e => this.searchChannels(e)} />
         <ul className='channel-search-results'>

@@ -1,7 +1,8 @@
 .sb-container {
   // display: inline-flex;
-  display: block;
-  float: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   position: absolute;
   box-sizing: border-box;
   // justify-content: space-between;
@@ -25,11 +26,20 @@
   padding-top: 1.5px;
 }
 
-.sb-current-user, .sb-channels p {
+.sb-current-user,
+.sb-channels p {
   font-size: 16px;
   // width: 100%;
   color: white;
   padding: 0 12px 0 15px;
+}
+
+.join-channel {
+  padding: 0 12px 0 15px;
+}
+
+.create-channel {
+  color: #d3d3d3;
 }
 
 .sb-current-user {
@@ -69,19 +79,21 @@
   color: white;
 }
 
-.create-channel {
-  text-decoration: none;
-}
-
-.create-channel p {
+.join-channel, .create-channel p {
   text-decoration: none;
   color: #d3d3d3;
+}
+
+.join-channel:hover {
+  cursor: pointer;
 }
 
 .sb-channels > ul li:not(.selected-channel):hover {
   background-color: #3E313C;
 }
-.sb-channels > ul p:not(.selected-channel):hover  {
+.sb-channels > ul p:not(.selected-channel):hover,
+.sb-channels > a:hover {
   color: white;
   transition: 0.30s;
 }
+

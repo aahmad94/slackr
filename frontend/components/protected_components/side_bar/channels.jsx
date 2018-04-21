@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ChannelSearchContainer from '../channels/channel_search_container';
 import Modal from 'react-modal';
+import FontAwesome from 'react-fontawesome';
+import CreateChannelFormContainer from '../channels/create_channel_form_container';
+
 
 export default class Channels extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      newFormIsOpen: false,
       searchIsOpen: false,
       modalStyle: {
         content: {
@@ -28,6 +32,14 @@ export default class Channels extends Component {
     this.props.fetchChannels();
   }
   
+  openNewChannelForm() {
+    this.setState({ newFormIsOpen: true });
+  }
+
+  closeNewChannelForm() {
+    this.setState({ newFormIsOpen: false });
+  }
+
   openChannelSearch() {
     this.setState({ searchIsOpen: true });
   }
@@ -36,21 +48,19 @@ export default class Channels extends Component {
     this.setState({ searchIsOpen: false });
   }
 
-
   render() {
     if (!this.props.channels) {
       return <p>No channels have been created yet</p>;
     }
      return (
-       <div className="sb-channels">
-          <button onClick={() => this.openChannelSearch()}>
-            Join a channel
-          </button>
-
+      <div className="sb-channels">
+        <a className="join-channel" onClick={() => this.openChannelSearch()}>
+          Channels
+        </a>
+        <a className="create-channel" onClick={() => this.openNewChannelForm()}>
+          <i class="far fa-plus-square"></i>
+        </a>
          <ul>
-           <Link className="create-channel" to='/create_channel'>
-             <p>create</p>
-           </Link>
           {
             this.props.channels.map((channel) => {
               let channelSelector = "";
@@ -70,14 +80,22 @@ export default class Channels extends Component {
             })
           }
         </ul>
-         <div className='modals'>
-           <Modal
-             contentLabel='ChannelSearchContainer'
-             isOpen={this.state.searchIsOpen}
-             style={this.state.modalStyle}>
-             <ChannelSearchContainer
-               closeModal={() => this.closeChannelSearch()} />
-           </Modal>
+          <div className='modals'>
+            <Modal
+              contentLabel='NewChannelFormContainer'
+              isOpen={this.state.newFormIsOpen}
+              style={this.state.modalStyle}>
+              <CreateChannelFormContainer
+                closeModal={() => this.closeNewChannelForm()} />
+            </Modal>
+
+            <Modal
+              contentLabel='ChannelSearchContainer'
+              isOpen={this.state.searchIsOpen}
+              style={this.state.modalStyle}>
+              <ChannelSearchContainer
+                closeModal={() => this.closeChannelSearch()} />
+            </Modal>
          </div>
       </div>
     );
