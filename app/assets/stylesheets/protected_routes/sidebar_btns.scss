@@ -1,0 +1,63 @@
+.sb-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; 
+  align-items: center;
+}
+
+.sb-btns .home-btn a {
+  color: white;
+  font-size: 1.2em;
+  font-weight: 700;
+}
+
+.fa-sign-out-alt {
+  font-size: 1em;
+  color: white;
+  padding: 22.5px 18px 0 0;
+}
+
+.fa-sign-out-alt:hover {
+  cursor: pointer;
+}
+
+.sb-btns .home-btn a,
+.fas, .fa-sign-out-alt {
+  animation: color-me-in 2.5s;
+}
+
+@keyframes color-me-in {
+  /* You could think of as "step 1" */
+  0% {
+    color: #4D394B;
+  }
+
+  /* You could think of as "step 2" */
+  100% {
+    color: white;
+  }
+}
+
+.sb-channels-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.join-channel {
+  padding: 0 12px 0 15px;
+}
+
+.join-channel:hover {
+  color: white;
+}
+
+.create-channel {
+  padding: 0 20px 0 0;
+  color: #d3d3d3;
+}
+
+.create-channel:hover {
+  cursor: pointer;
+  color: white;
+}

@@ -5,9 +5,9 @@ import Root from './components/root';
 
 import * as ChannelsActions from './actions/channels';
 
-
 document.addEventListener('DOMContentLoaded', () => {
   
+
   var http = require("http");
   setInterval(function() {
     http.get("http://wookiee.herokuapp.com");

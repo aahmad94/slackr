@@ -44,23 +44,12 @@ export default class NavBar extends React.Component {
     //   console.log(this.props);
     // }
 
-    const display = this.props.currentUser ? (
-      <div className="nav-btns">
-        <Link to="/messages/channels/1/" className="logo">Slackr</Link>
-        <a className="btn" onClick={this.props.logout}>Log Out</a>
-      </div>
-    ) : (
+  return (
+    <header className="nav-bar">
       <div className="nav-btns">
         <Link to="/" className="logo">Slackr</Link>
         <Link className="btn" to="/signup">Sign up</Link>
         <Link className="btn" to="/login">Log in</Link>
-      </div>
-    );
-
-  return (
-    <header className="nav-bar">
-      <div>
-        {display}
       </div>
     </header>
   );

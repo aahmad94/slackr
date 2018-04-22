@@ -54,13 +54,17 @@ export default class Channels extends Component {
     }
      return (
       <div className="sb-channels">
-        <a className="join-channel" onClick={() => this.openChannelSearch()}>
-          Channels
-        </a>
-        <a className="create-channel" onClick={() => this.openNewChannelForm()}>
-          <i class="far fa-plus-square"></i>
-        </a>
-         <ul>
+        <div className="sb-channels-btns">
+          <a className="join-channel" onClick={() => this.openChannelSearch()}>
+            Channels
+          </a>
+          <a className="create-channel" onClick={() => this.openNewChannelForm()}>
+            <i className="far fa-plus-square"></i>
+          </a>
+        </div>
+         <ul
+          className="sb-channels-list"
+         >
           {
             this.props.channels.map((channel) => {
               let channelSelector = "";
@@ -83,6 +87,7 @@ export default class Channels extends Component {
           <div className='modals'>
             <Modal
               contentLabel='NewChannelFormContainer'
+              ariaHideApp={false}
               isOpen={this.state.newFormIsOpen}
               style={this.state.modalStyle}>
               <CreateChannelFormContainer
@@ -91,6 +96,7 @@ export default class Channels extends Component {
 
             <Modal
               contentLabel='ChannelSearchContainer'
+              ariaHideApp={false}
               isOpen={this.state.searchIsOpen}
               style={this.state.modalStyle}>
               <ChannelSearchContainer

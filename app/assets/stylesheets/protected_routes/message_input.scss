@@ -1,0 +1,30 @@
+.msg-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  background: #f9f9f9;
+  width: 100%;
+  padding-bottom: 10px;
+  height: 50px;
+}
+
+.msg-form input {
+  box-sizing: border-box;
+  line-height: 1.46667;
+  padding: 10px;
+  height: 50px;
+  bottom: 10px;
+  width: 98%;
+  border: 1px solid #d9d9d9;
+  border-radius: 10px;
+  padding: 10px 10px;
+}
+
+.msg-form input:focus {
+  border: 1px solid #333333;
+}
+
+:focus {
+  outline: none;
+}

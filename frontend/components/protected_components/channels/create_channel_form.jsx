@@ -22,20 +22,28 @@ export default class CreateChannelForm extends React.Component {
     });
   }
 
-
   render() {
+    const {
+      closeModal
+    } = this.props;
     return (
       <div>
         <form
           className="create-channel-form"
           onSubmit={e => this.handleSubmit(e)}>
-          <label>
-            Channels
-          </label>
+          <h1 className="modal-header">
+            <label>
+              Create a channel
+            </label>
+            <i
+              className="fa fa-times"
+              aria-hidden="true"
+            onClick={closeModal}></i>
+          </h1>
           <input
             className="create-channel-input"
             type="text"
-            placeholder="Create a channel"
+            placeholder="Enter channel name"
             onChange={e => this.handleChange(e, 'channel_name')}
           />
         </form>

@@ -29,17 +29,16 @@ export default class MessageInput extends Component {
     }
     const channelName = this.props.channels[this.props.match.params.channelId].channel_name;
     return (
-      <div className='msg-form'>
-        <form
-          onSubmit={e => this.handleSubmit(e)}>
-          <input
-            type="text"
-            value={this.state.body}
-            placeholder={`Message #${channelName.toLowerCase()}`}
-            onChange={e => this.updateMessage(e)}
-          />
-        </form>
-      </div>
+      <form
+        className='msg-form'
+        onSubmit={e => this.handleSubmit(e)}>
+        <input
+          type="text"
+          value={this.state.body}
+          placeholder={`Message #${channelName.toLowerCase()}`}
+          onChange={e => this.updateMessage(e)}
+        />
+      </form>
     );
   }
 }

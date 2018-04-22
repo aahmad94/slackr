@@ -1,0 +1,13 @@
+.cm-container {
+  // display: display;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  // float: left;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  // overflow: auto;
+  // padding-left: 220px;
+}

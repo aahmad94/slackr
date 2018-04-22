@@ -10,9 +10,9 @@ import ChannelMessages from './protected_components/channels/channel_messages';
 import SideBar from './protected_components/side_bar/side_bar';
 
 const App = () => (
-  <div>
-      <Route path="/" component={NavBarContainer} />
+  <div className="app">
       <Route exact path="/" component={GuestLoginContainer} />
+      <AuthRoute path="/" component={NavBarContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={SigninContainer} />
       <ProtectedRoute path='/messages' component={SideBar} />

@@ -1,8 +1,9 @@
 .modal-header {
   display: flex;
   justify-content: space-between;
-  font-size: 1em;
   margin-bottom: 20px;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 .modal-header i {
@@ -29,8 +30,30 @@
   width: 236px;
   line-height: 2rem;
   border: 1px solid #a0a0a2;
+  border-bottom: 3px solid #4D394B;
   margin: 0 0 1rem 0;
   border-radius: 0.25rem;
-  font-size: 20px;
+  font-size: 1em;
 }
 
+// .class-search-modal-title {
+//   font-size: 1.5em;
+// }
+
+// // create channel form modal
+// .create-channel-form label {
+//   font-size: 1.5em;
+//   font-weight: bold;
+// }
+
+.create-channel-input {
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 236px;
+  line-height: 2rem;
+  border: 1px solid #a0a0a2;
+  border-bottom: 3px solid #4D394B;
+  margin: 0 0 1rem 0;
+  border-radius: 0.25rem;
+  font-size: 1em;
+}

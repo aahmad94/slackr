@@ -3,20 +3,17 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  position: absolute;
-  // box-sizing: border-box;
-  border-radius: 10px;
-  // justify-content: space-between;
-  // flex-direction: column;
+  position: relative;
+  border-radius: 0 5px 5px 0;
   background-color: #4D394B;
   width: 220px;
-  height: calc(100% - 75px);
-  z-index: 100;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 .sb-current-user-div {
   display: block;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .sb-current-user {
@@ -27,20 +24,45 @@
   padding-top: 1.5px;
 }
 
+.sb-channels-list {
+  overflow-y: scroll;
+  max-height: 40vh;  
+}
+
+.sb-channels-list::-webkit-scrollbar {
+  left: 20px;
+  width: 8px;
+}
+
+/* Track */
+
+.sb-channels-list::-webkit-scrollbar-track {
+  background: #4D394B;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/* Handle */
+
+.sb-channels-list::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 114, 116, .5);
+  background-clip: padding-box !important;
+  border-radius: 3px;
+  color: rgba(113, 114, 116, 0.35);
+  min-height: 36px;
+}
+
+.sb-channels-list::-webkit-scrollbar-thumb:window-inactive {
+  background: #d9d9de;
+}
+
+
 .sb-current-user,
 .sb-channels p {
   font-size: 16px;
   // width: 100%;
   color: white;
   padding: 0 12px 0 15px;
-}
-
-.join-channel {
-  padding: 0 12px 0 15px;
-}
-
-.create-channel {
-  color: #d3d3d3;
 }
 
 .sb-current-user {

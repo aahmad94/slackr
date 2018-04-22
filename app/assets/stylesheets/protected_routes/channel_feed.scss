@@ -1,0 +1,37 @@
+.feed {
+  overflow: auto;
+  min-height: calc(100vh - 60px);
+  max-height: calc(100vh - 60px);
+}
+
+.channel-title {
+  padding: 20px 0 0px 20px;
+  font-weight: 1200;
+  margin-bottom: 0.5em;
+}
+
+.feed::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+
+.feed::-webkit-scrollbar-track {
+  background: #f9f9f9;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+/* Handle */
+
+.feed::-webkit-scrollbar-thumb {
+  background-color: rgba(113, 114, 116, .5);
+  background-clip: padding-box !important;
+  border-radius: 3px;
+  color: #717274;
+  min-height: 36px;
+}
+
+.feed::-webkit-scrollbar-thumb:window-inactive {
+  background: #d9d9de;
+}

@@ -1,0 +1,34 @@
+// Place all the styles related to the api/messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.msg-item {
+  padding-left: 20px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+.msg-item .user-display-name {
+  display: inline;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.msg-item .timestamp {
+  display: inline;
+  font-size: 14px;
+  color: #717274;
+}
+
+.msg-item .msg-body {
+  font-size: 16px;
+}
+
+.msg-item:hover {
+  background-color: #f2f2f2;
+}
+
+.msg-body {
+	display: block;
+	width: 100%;
+	overflow-wrap: break-word;
+}

@@ -47,7 +47,7 @@ export default class ChannelSearch extends React.Component {
         className='search'
         onKeyDown={e => this.handleKeyDown(e)}>
         <h1 className='modal-header'>
-          <span>Join a channel</span>
+          <span className="class-search-modal-title">Join a channel</span>
           <i
             className="fa fa-times"
             aria-hidden="true"
