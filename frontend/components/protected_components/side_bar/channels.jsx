@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ChannelSearchContainer from '../channels/channel_search_container';
-import Modal from 'react-modal';
-import FontAwesome from 'react-fontawesome';
 import CreateChannelFormContainer from '../channels/create_channel_form_container';
-
+import Modal from 'react-modal';
+import ReactTooltip from 'react-tooltip';
 
 export default class Channels extends Component {
   constructor(props) {
@@ -55,12 +54,19 @@ export default class Channels extends Component {
      return (
       <div className="sb-channels">
         <div className="sb-channels-btns">
-          <a className="join-channel" onClick={() => this.openChannelSearch()}>
+          <a 
+            className="join-channel"
+            data-tip='Browse all channels'
+            onClick={() => this.openChannelSearch()}>
             Channels
           </a>
-          <a className="create-channel" onClick={() => this.openNewChannelForm()}>
+          <a 
+            className="create-channel" 
+            data-tip="Create a channel"
+            onClick={() => this.openNewChannelForm()}>
             <i className="far fa-plus-square"></i>
           </a>
+          <ReactTooltip />
         </div>
          <ul
           className="sb-channels-list"
