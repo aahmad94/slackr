@@ -4,6 +4,7 @@ import configureStore from './store/store';
 import Root from './components/root';
 
 import * as ChannelsActions from './actions/channels';
+import * as RoomsActions from './actions/rooms/rooms_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -29,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // tests here
   window.store = store;
   window.searchChannels = ChannelsActions.searchChannels;
+  window.createRoom = RoomsActions.createRoom;
 
   ReactDOM.render(<Root store = {store} />, root);
 });

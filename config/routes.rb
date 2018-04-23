@@ -18,7 +18,7 @@ Rails.application.routes.draw do
       resources :users, only: :index
     end
 
-    #directmessages
+    #directmessage_rms
     resources :directmessages, only: [:index, :create] do
       resources :messages, only: [:create, :index]
       resources :users, only: :index
@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   post '/api/directmessages/:directmessage_id/add/:id' => 'api/directmessages#add',
     as: 'api_directmessage_add',
     defaults: { format: :json }
-    
+
   patch '/api/directmessages/update_last_read/:id' => 'api/directmessages#update_last_read',
     as: 'api_directmessage_update_last_read',
     defaults: { format: :json }
