@@ -7,7 +7,7 @@
 }
 
 .modal-header i {
-  color: #4D394B;
+  color: #333333;
   cursor: pointer;
   transition: text-shadow 0.3s;
 }
@@ -30,10 +30,13 @@
   width: 236px;
   line-height: 2rem;
   border: 1px solid #a0a0a2;
-  border-bottom: 3px solid #4D394B;
   margin: 0 0 1rem 0;
   border-radius: 0.25rem;
   font-size: 1em;
+}
+
+.channel-search-input:focus {
+  border: 1px solid #333333;
 }
 
 // .class-search-modal-title {
@@ -52,8 +55,11 @@
   width: 236px;
   line-height: 2rem;
   border: 1px solid #a0a0a2;
-  border-bottom: 3px solid #4D394B;
   margin: 0 0 1rem 0;
   border-radius: 0.25rem;
   font-size: 1em;
+}
+
+.create-channel-input:focus {
+  border: 1px solid #333333;
 }

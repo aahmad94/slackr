@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Wookiee</title>
-    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>
+    <title>Slackr</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="<%= asset_path( 'apple-touch-icon.png' ) %>">
+    <link rel="icon" type="image/png" sizes="32x32" href="<%= asset_path( 'favicon-32x32.png' ) %>">
+    <link rel="icon" type="image/png" sizes="16x16" href="<%= asset_path( 'favicon-16x16.png' ) %>">
+    <link rel="manifest" href="<%= asset_path( 'site.webmanifest' ) %>">
+    <link rel="mask-icon" href="<%= asset_path( 'safari-pinned-tab.svg' ) %>" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>

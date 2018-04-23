@@ -11,11 +11,6 @@
   max-height: 100vh;
 }
 
-.sb-current-user-div {
-  display: block;
-  padding-top: 10px;
-}
-
 .sb-current-user {
   text-transform: capitalize;
 }
@@ -55,7 +50,6 @@
 .sb-channels-list::-webkit-scrollbar-thumb:window-inactive {
   background: #d9d9de;
 }
-
 
 .sb-current-user,
 .sb-channels p {
