@@ -1,20 +1,20 @@
 import { receiveMessage } from './message.js';
 
-export const setSocket = (channelName) => (dispatch) => {
+export const setSocket = (username) => (dispatch) => {
   if (window.App.channel) {
     removeSocket();
   }
-  addSocket(channelName, dispatch);
+  addSocket(username, dispatch);
 };
 
-export const removeSocket = () => {
+export const removeSocket = username => {
   window.App.cable.subscriptions.remove(window.App.channel);
 };
 
-export const addSocket = (channelName, dispatch) => {
+export const addSocket = (username, dispatch) => {
   window.App.channel = window.App.cable.subscriptions.create({
-    channel: 'ChannelChannel',
-    channel_name: channelName
+    channel: 'UserChannel',
+    username
   }, {
     connected: () => {},
     disconnected: () => {},

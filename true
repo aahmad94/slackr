@@ -1,0 +1,2 @@
+      invoke  active_record
+   identical    db/migrate/20180423223122_change_column.rb

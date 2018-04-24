@@ -6,7 +6,7 @@ class CurrentUserRelayJob < ApplicationJob
     )
 
     ActionCable.server.broadcast(
-      "user_#{current_user.username}",
+      "user_#{current_user.email}",
       currentUser: JSON.parse(current_user_json)
     )
   end

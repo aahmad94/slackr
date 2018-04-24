@@ -12,6 +12,7 @@ class Api::DirectmessagesController < ApplicationController
       User.find(user_id)
     end
     DirectmessageRelayJob.perform_later(@directmessage_rm, @users)
+    p "----------------------------------NOW CURR USER RELAY JOB-----------------------------"
     @directmessage_rm.users.each do |user|
       CurrentUserRelayJob.perform_later(user)
     end

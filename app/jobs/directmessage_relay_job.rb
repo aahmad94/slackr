@@ -1,7 +1,7 @@
 class DirectmessageRelayJob < ApplicationJob
   def perform(directmessage, users)
     directmessage_json = Api::ChannelsController.render(
-    partial: 'api/directmessagess/directmessage',
+    partial: 'api/directmessages/directmessage',
     locals: { directmessage: directmessage }
     )
 
@@ -10,8 +10,8 @@ class DirectmessageRelayJob < ApplicationJob
     users.each do |user|
       users_hash[user.id] = JSON.parse(
         Api::UsersController.render(
-          partial: 'api/users/user',
-          locals: { user: user }
+        partial: 'api/users/user',
+        locals: { user: user }
         )
       )
     end

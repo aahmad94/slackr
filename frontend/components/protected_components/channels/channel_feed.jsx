@@ -20,9 +20,7 @@ class ChannelFeed extends Component {
         () => this.props.fetchChannelUsers(currentChannelId)),
         this.props.fetchChannelMessages(currentChannelId),
         this.props.fetchChannels(),
-      ]).then(() => this.props.setSocket(
-        this.props.channels[currentChannelId].channel_name))
-        .then(() => this.setState({loading: false}));
+      ]).then(() => this.setState({loading: false}));
     }
   }
 
@@ -33,9 +31,7 @@ class ChannelFeed extends Component {
       () => this.props.fetchChannelUsers(channelId)),
       this.props.fetchChannelMessages(channelId),
       this.props.fetchChannels()
-    ]).then(() => this.props.setSocket(
-      this.props.channels[channelId].channel_name))
-      .then(() => this.setState({loading: false}));
+    ]).then(() => this.setState({loading: false}));
   }
 
   componentDidUpdate() {

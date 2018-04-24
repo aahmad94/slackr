@@ -24,6 +24,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+
+  # ---------- Auth stuff ----------
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
     if user && user.is_password?(password)
@@ -52,4 +54,26 @@ class User < ApplicationRecord
     self.session_token = SecureRandom.urlsafe_base64
   end
 
+  # # ---------- Channel stuff ----------
+
+  # def become_admin(channel)
+  #   self.channel_memberships.create channel_id: channel.id,
+  #                                   admin: true
+  # end
+
+  # def admined_channels
+  #   self.channels.where(channel_memberships: {admin: true})
+  # end
+
+  # # ---------- Room stuff ----------
+
+  # def direct_message_directmessages
+  #   self.directmessages.select { |room| room.users.length == 2 }
+  # end
+
+  # def dm_user_ids
+  #   self.direct_message_directmessages.map do |dmr|
+  #     dmr.user_ids.reject { |id| id == self.id }[0]
+  #   end
+  # end
 end
