@@ -1,29 +1,36 @@
 .nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
   background: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,.1);
-  height: 65px;
+  min-height: 65px;
+  max-height: 65px;
   z-index: 2;
   width: 100vw;
 }
 
 .logo {
-  display: inline-block;
-  float: left;
-  position: relative;
-  padding-left: 15px;
-  top: 10px;
+  padding-left: 30px;
   text-decoration: none;
   color: #000;
   font-size: 1.75rem;
   font-weight: 700;
 }
+.nav-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 30px;
+} 
 
 .btn  {
-  display: inline-block;
-  position: relative;
-  float: right;
-  text-align: center;
-  top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   height: 20px;
   width: 52px;
   padding:  5px 10px 5px 10px;
@@ -37,23 +44,11 @@
   border-radius: 4px;
 }
 
-.nav-btns:last-child {
-  padding-right: 15px;
-} 
-
-
-
 .btn:hover {
   cursor: pointer;
 }
 
-.welcome-message {
-  display: inline-block;
-  position: relative;
-  top: 40px;
-  left: -118px;
-  font-size: 14px;
-  color: black;
-  word-wrap: break-word;
-  padding-right: 5px;
+.btn:active {
+  box-shadow: 0 1px #bbbbbb;
+  transform: translateY(1px);
 }

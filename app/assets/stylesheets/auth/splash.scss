@@ -1,15 +1,10 @@
 .splash {
   display: flex;
   flex-direction: row;
-  padding-top: 100px;
+  padding-top: 75px;
   justify-content: center;
 }
 
-// @media (width:500px) {
-//   .splash {
-//     flex-direction: column;
-//   }
-// }
 
 .splash-info {
   display: flex;
@@ -44,5 +39,27 @@
   border: none;
   border-radius: .25rem;
   box-shadow: none;
+}
 
+.splash a:active {
+  box-shadow: 0 1px #bbbbbb;
+  transform: translateY(1px);
+}
+
+@media (max-width:1080px) {
+  .splash {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .splash-info {
+    width: 60vw;
+    padding-bottom: 50px;
+  }
+}
+@media (max-width:640px) {
+  .splash {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 }
