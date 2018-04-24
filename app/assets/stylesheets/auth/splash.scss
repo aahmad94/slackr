@@ -1,0 +1,48 @@
+.splash {
+  display: flex;
+  flex-direction: row;
+  padding-top: 100px;
+  justify-content: center;
+}
+
+// @media (width:500px) {
+//   .splash {
+//     flex-direction: column;
+//   }
+// }
+
+.splash-info {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  width: 25vw;
+}
+
+.splash h1 {
+  font-size: 4.8rem;
+  font-family: "Times New Roman";
+}
+
+.splash p {
+  font-size: 1rem;
+  line-height: 2rem;
+  color: #5b5e6d;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.splash a {
+  padding: 19px 40px 20px;
+  width: 102px;
+  background: #1c299d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  border: none;
+  border-radius: .25rem;
+  box-shadow: none;
+
+}

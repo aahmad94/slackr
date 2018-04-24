@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.store = store;
   window.searchChannels = ChannelsActions.searchChannels;
   window.createRoom = RoomsActions.createRoom;
+  window.leaveRoom = RoomsActions.leaveRoom;
+  window.addUser = RoomsActions.addUser;
 
   ReactDOM.render(<Root store = {store} />, root);
 });

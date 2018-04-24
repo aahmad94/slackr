@@ -3,7 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { fetchChannelMessages } from '../../../actions/message';
 import { fetchChannels } from '../../../actions/channels';
 import { fetchChannelUsers } from '../../../actions/users';
-import { addSubscriberToChannel } from '../../../actions/channels';
 import { setSocket } from '../../../actions/action_cable';
 import ChannelFeed from './channel_feed';
 
@@ -16,8 +15,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    addSubscriberToChannel: (channelId) =>
-      dispatch(addSubscriberToChannel(channelId)),
     fetchChannelUsers: (channelId) => dispatch(fetchChannelUsers(channelId)),
     fetchChannels: () => dispatch(fetchChannels()),
     fetchChannelMessages: (channelId) => dispatch(fetchChannelMessages(channelId)),

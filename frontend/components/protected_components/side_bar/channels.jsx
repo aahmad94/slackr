@@ -47,6 +47,7 @@ export default class Channels extends Component {
     this.setState({ searchIsOpen: false });
   }
 
+
   render() {
     if (!this.props.channels) {
       return <p>No channels have been created yet</p>;
@@ -79,7 +80,9 @@ export default class Channels extends Component {
               }
 
               return(
-                <li className={channelSelector} key={channel.id}>
+                <li 
+                  className={channelSelector} 
+                  key={channel.id}>
                   <Link
                     className="sb-channels-link"
                     to={`/messages/channels/${channel.id}/`}>

@@ -3,6 +3,12 @@
   flex-direction: row;
   justify-content: space-between; 
   align-items: flex-start;
+  border-radius: 0 5px 5px 0;
+}
+
+.sb-btns:hover {
+  background: rgb(59, 43, 58);
+  padding-bottom: 10px;
 }
 
 .sb-btns .home-btn a {

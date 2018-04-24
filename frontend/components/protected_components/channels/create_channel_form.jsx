@@ -11,8 +11,10 @@ export default class CreateChannelForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createChannel(this.state)
-    .then((channel) =>
-      this.props.history.push(`/messages/channels/${channel.id}/`))
+    .then((channel) => {
+      this.props.addSubscriberToChannel(channel.id);
+      this.props.history.push(`/messages/channels/${channel.id}/`);
+    })
     .then(this.props.closeModal);
   }
 

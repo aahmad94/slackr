@@ -32,8 +32,7 @@ class Signup extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.login(user)
-      .then(() => this.props.addSubscriberToChannel(1))
-      .then(() => this.props.history.push('/messages/channels/1/'));
+      .then(() => this.props.history.push('/messages'));
   }
 
   renderErrors() {

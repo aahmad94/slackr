@@ -1,7 +1,7 @@
 class Api::ChannelsController < ApplicationController
 
   def index
-    @channels = Channel.all
+    @channels = current_user.channels
     return :index
   end
 
