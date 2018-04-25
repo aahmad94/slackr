@@ -6,9 +6,25 @@ export const createChannelMessage = (message, channelId) => (
   })
 );
 
-export const fetchChannelMessages = (channelId) => (
+
+
+export const fetchChannelMessagesWithUsers = (channelId) => (
   $.ajax({
     url: `/api/channels/${channelId}/messages`,
     method: 'GET'    
+  })
+);
+
+export const createRoomMessage = (message, roomId) => (
+  $.ajax({
+    url: `/api/directmessages/${roomId}/messages`,
+    method: 'POST',
+    data: { message }
+  })
+);
+
+export const fetchRoomMessagesWithUsers = roomId => (
+  $.ajax({
+    url: `/api/directmessages/${roomId}/messages`
   })
 );

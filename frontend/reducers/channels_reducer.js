@@ -1,8 +1,10 @@
 import merge from 'lodash/merge';
 
 import {
-  RECEIVE_CHANNELS, RECEIVE_CHANNEL
+  RECEIVE_CHANNELS, RECEIVE_CHANNEL, REMOVE_CHANNEL
 } from '../actions/channels';
+
+import { RECEIVE_CURRENT_USER } from '../actions/session';
 
 const channelsReducer = (state = {}, action) => {
 
@@ -12,6 +14,16 @@ const channelsReducer = (state = {}, action) => {
       return action.channels;
     case RECEIVE_CHANNEL:
       return merge({}, state, {[action.channel.id]: action.channel});
+    case REMOVE_CHANNEL:
+      const newState = merge({}, state);
+      delete newState[action.channelId];
+      return newState;
+    case RECEIVE_CURRENT_USER:
+      if (!action.user) {
+        return {};
+      } else {
+        return state;
+      }
     default:
       return state;
   }

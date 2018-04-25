@@ -16,8 +16,7 @@ class ChannelFeed extends Component {
     const currentChannelId = nextProps.match.params.channelId;
     if (oldChannelId !== currentChannelId) {
       Promise.all([
-        this.props.fetchChannelUsers(currentChannelId),
-        this.props.fetchChannelMessages(currentChannelId),
+        this.props.fetchChannelMessagesWithUsers(currentChannelId),
         this.props.fetchChannels(),
       ]).then(() => this.setState({loading: false}));
     }
@@ -26,8 +25,7 @@ class ChannelFeed extends Component {
   componentDidMount() {
     const channelId = this.props.match.params.channelId;
     Promise.all([
-      this.props.fetchChannelUsers(channelId),
-      this.props.fetchChannelMessages(channelId),
+      this.props.fetchChannelMessagesWithUsers(channelId),
       this.props.fetchChannels()
     ]).then(() => this.setState({loading: false}));
   }

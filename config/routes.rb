@@ -26,7 +26,7 @@ Rails.application.routes.draw do
 
   end
 
-  # channels
+  # ------------ channels -----------
   post '/api/channels/add_subscriber/:id' => 'api/channels#add_subscriber',
     as: 'api_channel_add_subscriber',
     defaults: { format: :json }
@@ -39,7 +39,11 @@ Rails.application.routes.draw do
     as: 'api_channel_search',
     defaults: { format: :json }
 
-  # directmessages
+  patch '/api/channels/update_last_read/:id' => 'api/channels#update_last_read',
+      as: 'api_channel_update_last_read',
+      defaults: { format: :json }
+
+  # ------------ directmessages ----------
   delete '/api/directmessages/leave/:id' => 'api/directmessages#leave',
     as: 'api_directmessage_leave',
     defaults: { format: :json }
@@ -51,5 +55,10 @@ Rails.application.routes.draw do
   patch '/api/directmessages/update_last_read/:id' => 'api/directmessages#update_last_read',
     as: 'api_directmessage_update_last_read',
     defaults: { format: :json }
+
+  # ---------- users_search ----------
+  get '/api/users/search/:query' => 'api/users#search',
+     as: 'api_users_search',
+     defaults: { format: :json }
 
 end

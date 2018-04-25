@@ -2,6 +2,8 @@ import * as MessageUtils from '../utils/message';
 
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
+export const RECEIVE_MESSAGES_WITH_USERS = 'RECEIVE_MESSAGES_WITH_USERS';
+
 
 export const receiveMessage = (message) => {
   return {
@@ -12,15 +14,37 @@ export const receiveMessage = (message) => {
 
 const receiveMessages = (messages) => ({
   type: RECEIVE_MESSAGES,
-  messages,
+  messages
 });
+
+export const receiveMessagesWithUsers = ({ messages, users }) => ({
+  type: RECEIVE_MESSAGES_WITH_USERS,
+  messages,
+  users
+});
+
 
 export const createChannelMessage = (message, channelId) => (dispatch) => (
   MessageUtils.createChannelMessage(message, channelId)
 );
 
-export const fetchChannelMessages = (channelId) => dispatch => (
-  MessageUtils.fetchChannelMessages(channelId).then(
-    (messages) => dispatch(receiveMessages(messages))
+// export const fetchChannelMessages = (channelId) => dispatch => (
+//   MessageUtils.fetchChannelMessagesWithUsers(channelId).then(
+//     (messages) => dispatch(receiveMessages(messages))
+//   )
+// );
+
+export const fetchChannelMessagesWithUsers = channelId => dispatch => (
+  MessageUtils.fetchChannelMessagesWithUsers(channelId).then(
+    data => {
+      console.log({ data });
+      dispatch(receiveMessagesWithUsers(data));
+      }
+  )
+);
+
+export const fetchRoomMessagesWithUsers = roomId => dispatch => (
+  MessageUtils.fetchRoomMessagesWithUsers(roomId).then(
+    data => dispatch(receiveMessagesWithUsers(data))
   )
 );

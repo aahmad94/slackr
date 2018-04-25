@@ -56,14 +56,14 @@ class User < ApplicationRecord
 
   # # ---------- Channel stuff ----------
 
-  # def become_admin(channel)
-  #   self.channel_memberships.create channel_id: channel.id,
-  #                                   admin: true
-  # end
+  def become_admin(channel)
+    self.channel_subscriptions.create channel_id: channel.id,
+                                    admin: true
+  end
 
-  # def admined_channels
-  #   self.channels.where(channel_memberships: {admin: true})
-  # end
+  def admined_channels
+    self.channels.where(channel_subscriptions: {admin: true})
+  end
 
   # # ---------- Room stuff ----------
 
