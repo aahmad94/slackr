@@ -14,11 +14,13 @@
 }
 
 .splash h1 {
+  display: flex;
   font-size: 4.8rem;
   font-family: "Times New Roman";
 }
 
 .splash p {
+  display: flex;
   font-size: 1rem;
   line-height: 2rem;
   color: #5b5e6d;
@@ -27,8 +29,10 @@
 }
 
 .splash a {
+  display: flex;
+  align-items: center;
+  max-width: 120px;
   padding: 10px 20px 10px 20px;
-  width: 120px;
   background: #1c299d;
   color: #fff;
   font-size: 16px;
@@ -52,6 +56,14 @@
     align-items: center;
   }
 
+  .splash h1, .splash p {
+    text-align: center;
+  }
+
+  .splash a {
+    align-self: center;
+  }
+
   .splash-info {
     width: 60vw;
     padding-bottom: 50px;
@@ -59,7 +71,6 @@
 }
 @media (max-width:570px) {
   .splash {
-    flex-direction: column-reverse;
     align-items: flex-start;
   }
 }
