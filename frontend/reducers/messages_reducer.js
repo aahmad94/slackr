@@ -9,10 +9,9 @@ export default (state = {}, action) => {
   switch (action.type) {
     case RECEIVE_MESSAGE:
       return merge({}, state, {[action.message.id]: action.message});
+    case RECEIVE_MESSAGES:
     case RECEIVE_MESSAGES_WITH_USERS:
-      console.log("------------ in messages reducer -------------");
-      console.log({ action: action });
-      return merge({}, state, action.messages);
+      return merge({}, action.messages);
     default:
       return state;
   }

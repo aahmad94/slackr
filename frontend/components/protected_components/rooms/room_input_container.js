@@ -3,8 +3,8 @@ import { withRouter } from 'react-router-dom';
 
 import {
   createRoomMessage
-} from '../../../actions/messages/messages_actions';
-import MessageInput from '../message_input';
+} from '../../../actions/message';
+import MessageInput from './message_input';
 
 const mapStateToProps = state => ({
 });

@@ -5,6 +5,7 @@ import Root from './components/root';
 
 import * as ChannelsActions from './actions/channels';
 import * as RoomsActions from './actions/rooms/rooms_actions';
+import * as RoomsUtils from './actions/rooms/rooms_utils';
 
 document.addEventListener('DOMContentLoaded', () => {
   
@@ -33,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.createRoom = RoomsActions.createRoom;
   window.leaveRoom = RoomsActions.leaveRoom;
   window.addUser = RoomsActions.addUser;
+  window.fetchRoomsAndUsers = RoomsUtils.fetchRoomsAndUsers;
 
   ReactDOM.render(<Root store = {store} />, root);
 });

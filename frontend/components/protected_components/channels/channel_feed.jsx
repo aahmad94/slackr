@@ -12,6 +12,7 @@ class ChannelFeed extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log("CHANNELS - IN COMPONENT WILL RECEIVE PROPS");
     const oldChannelId = this.props.match.params.channelId;
     const currentChannelId = nextProps.match.params.channelId;
     if (oldChannelId !== currentChannelId) {
@@ -23,6 +24,7 @@ class ChannelFeed extends Component {
   }
 
   componentDidMount() {
+    console.log("CHANNELS - IN COMPONENT DID MOUNT");
     const channelId = this.props.match.params.channelId;
     Promise.all([
       this.props.fetchChannelMessagesWithUsers(channelId),
@@ -31,7 +33,6 @@ class ChannelFeed extends Component {
   }
 
   componentDidUpdate() {
-
     if (!this.state.loading) {
       this.scrollToBottom();
     }
@@ -43,6 +44,7 @@ class ChannelFeed extends Component {
 
   render () {
     if (!this.state.loading) {
+      console.log({channelMessagesLength: this.props.messages.length});
       return (
         <div className='feed'>
           <h4 className='channel-title'>

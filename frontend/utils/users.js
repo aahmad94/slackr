@@ -4,3 +4,9 @@ export const fetchChannelUsers = (channelId) => (
     method: 'GET'
   })
 );
+
+export const searchUsers = query => (
+  $.ajax({
+    url: `api/users/search/${query}`
+  })
+);

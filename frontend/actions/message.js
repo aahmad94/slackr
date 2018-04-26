@@ -28,18 +28,20 @@ export const createChannelMessage = (message, channelId) => (dispatch) => (
   MessageUtils.createChannelMessage(message, channelId)
 );
 
+export const createRoomMessage = (message, roomId) => dispatch => (
+  MessageUtils.createRoomMessage(message, roomId)
+);
+
 // export const fetchChannelMessages = (channelId) => dispatch => (
 //   MessageUtils.fetchChannelMessagesWithUsers(channelId).then(
 //     (messages) => dispatch(receiveMessages(messages))
 //   )
 // );
 
+
 export const fetchChannelMessagesWithUsers = channelId => dispatch => (
   MessageUtils.fetchChannelMessagesWithUsers(channelId).then(
-    data => {
-      console.log({ data });
-      dispatch(receiveMessagesWithUsers(data));
-      }
+    data => dispatch(receiveMessagesWithUsers(data))
   )
 );
 

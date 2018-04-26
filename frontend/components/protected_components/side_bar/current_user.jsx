@@ -3,7 +3,6 @@ import React from 'react';
 // CurrentUser
 export default class CurrentUser extends React.Component {
   componentDidMount() {
-    console.log({props: this.props});
     const { setSocket, currentUser } = this.props;
     setSocket(currentUser.email);
   }

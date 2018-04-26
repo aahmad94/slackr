@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
 import messagesReducer from './messages_reducer';
+import usersReducer from './users_reducer';
 import channelsReducer from './channels_reducer';
-import usersReducer from './users_reducer'
-// entitiesReducer
+import roomsReducer from './rooms_reducer';
+
 export default combineReducers({
   users: usersReducer,
   messages: messagesReducer,
-  channels: channelsReducer
+  channels: channelsReducer,
+  rooms: roomsReducer
 });

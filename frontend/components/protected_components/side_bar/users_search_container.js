@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 
 import { searchUsers } from '../../../actions/users';
-import { addUser } from '../../../actions/rooms/rooms_actions';
-import RoomFeedUsersSearch from './room_feed_users_search';
+import { openUserShow } from '../../../actions/ui/user_show_actions';
+import UsersSearch from './users_search';
 
 const arrayUsersSearchResults = state => (
   Object.keys(state.ui.usersSearchResults).map(
@@ -21,10 +21,11 @@ const mapDispatchToProps = dispatch => ({
     type: 'UPDATE_USERS_SEARCH_RESULTS',
     usersSearchResults: {}
   }),
-  addUser: (roomId, userId) => dispatch(addUser(roomId, userId))
+  openUserShow: userId => dispatch(openUserShow(userId))
+  // joinUsers: usersId => dispatch(joinUsers(usersId))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(RoomFeedUsersSearch);
+)(UsersSearch);

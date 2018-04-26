@@ -1,16 +1,16 @@
-# Wookiee
+# Slackr
 
-[Wookiee Live][heroku]
+[Slackr Live][heroku]
 
-[heroku]: http:/wookiee.herokuapp.com
+[heroku]: http:/slackr.herokuapp.com
 
-Wookiee is a web application clone of Slack developed with Rails and React/Redux.
+slackr is a web application clone of Slack developed with Rails and React/Redux.
 
 ## Features & Implementation
 
 ### User Authentication
 
-Wookiee allows users to sign in/sign out securely with the implementation of BCrypt to generate salted hash from the user password, as such users' passwords are not stored in the database. In addition uniquely signed session tokens are generated for each user, ensuring each session belongs to he correct user.
+slackr allows users to sign in/sign out securely with the implementation of BCrypt to generate salted hash from the user password, as such users' passwords are not stored in the database. In addition uniquely signed session tokens are generated for each user, ensuring each session belongs to he correct user.
 
 ```ruby
 class User < ApplicationRecord
@@ -42,7 +42,7 @@ end
 
 Live chat requires a WebSocket connection to allow for an interactive communication between the user's browser and the server via a bidirectional binary protocol. Action Cable was introduced in Rails 5.1 as a means to integrate WebSocket connections; it's a fullstack implementation that involves a client-side JavaScript framework and a server-side Ruby framework.
 
-The Wookiee React/Redux frontend is responsible for sending POST requests to the server at which point a messages controller is instantiated to handle and persist the message to the database as well as to send a JSON response back to the wookiee frontend to update the Redux state.
+The slackr React/Redux frontend is responsible for sending POST requests to the server at which point a messages controller is instantiated to handle and persist the message to the database as well as to send a JSON response back to the slackr frontend to update the Redux state.
 
 When a message is created, it's then broadcasted to the channel it belongs to; the model for messages is polymorphic as it may belong to either a channel or direct/group message.  
 
@@ -145,6 +145,6 @@ class ChannelFeed extends Component {
 
 ## Channels
 
-Channels are live chat rooms available to all users that have signed up for Wookiee. A user may join and switch between channels by clicking on the respective channel name in the sidebar:
+Channels are live chat rooms available to all users that have signed up for slackr. A user may join and switch between channels by clicking on the respective channel name in the sidebar:
 
-![channels](https://github.com/aahmad94/wookiee/blob/master/docs/wookies-channels.png)
+![channels](https://github.com/aahmad94/slackr/blob/master/docs/wookies-channels.png)

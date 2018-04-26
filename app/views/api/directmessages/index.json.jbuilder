@@ -1,7 +1,7 @@
-json.directmessage_rms do
-  @directmessages_rms.each do |directmessage_rm|
+json.rooms do
+  @directmessage_rms.each do |directmessage_rm|
     json.set! directmessage_rm.id do
-      json.partial! 'api/directmessages/directmessage_rm', directmessage_rm: directmessage_rm
+      json.partial! 'api/directmessages/directmessage', directmessage_rm: directmessage_rm
     end
   end
 end

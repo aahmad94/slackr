@@ -18,7 +18,7 @@ class DirectmessageRelayJob < ApplicationJob
 
     users.each do |user|
       ActionCable.server.broadcast(
-      "user_#{user.username}",
+      "user_#{user.email}",
       directmessage: JSON.parse(directmessage_json),
       users: users_hash
       )

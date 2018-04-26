@@ -18,12 +18,9 @@ class MessageRelayJob < ApplicationJob
     else
       interface_json = Api::ChannelsController.render(
       partial: 'api/directmessages/directmessage',
-      locals: { room: message.interface }
+      locals: { directmessage_rm: message.interface }
       )
     end
-
-    # ActionCable.server.broadcast("channel_#{interface.channel_name}",
-    #                              message: JSON.parse(message_json))
 
     interface.users.each do |user|
       ActionCable.server.broadcast(

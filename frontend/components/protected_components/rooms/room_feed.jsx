@@ -1,7 +1,7 @@
 import React from 'react';
 
-import MessageContainer from '../message_container';
-import UsersSearchContainer from '../users_search_container';
+import MessageContainer from './message_container';
+import UsersSearchContainer from './users_search_container';
 import RoomFeedUsersSearchContainer from './room_feed_users_search_container';
 
 export default class RoomFeed extends React.Component {
@@ -17,11 +17,13 @@ export default class RoomFeed extends React.Component {
     }
   }
 
-  componentWillUnmount () {
-    clearTimeout(this.updateLastReadTimeout);
-  }
+  // componentWillUnmount () {
+  //   clearTimeout(this.updateLastReadTimeout);
+  // }
 
   componentDidMount () {
+    console.log("IN COMPONENT DID MOUNT");
+    console.log(this.props);
     const {
       fetchRoomMessagesWithUsers, updateLastRead, match
     } = this.props;
@@ -41,6 +43,9 @@ export default class RoomFeed extends React.Component {
   }
 
   componentWillReceiveProps (newProps) {
+    console.log("IN COMPONENT WILL REVEIVE NEW PROPS");
+    console.log(this.props);
+    console.log({newProps});
     const {
       fetchRoomMessagesWithUsers, updateLastRead, match
     } = this.props;
@@ -71,16 +76,16 @@ export default class RoomFeed extends React.Component {
     }
 
     // check for new message
-    if (this.props.room.messageIds.length !==
-        newProps.room.messageIds.length) {
+    if (this.props.room.message_ids.length !==
+        newProps.room.message_ids.length) {
       updateLastRead(match.params.roomId);
     }
   }
 
   componentDidUpdate (prevProps) {
     // check for new message
-    if (this.props.room.messageIds.length !==
-        prevProps.room.messageIds.length) {
+    if (this.props.room.message_ids.length !==
+        prevProps.room.message_ids.length) {
       this.refreshScroll();
     }
   }
@@ -96,18 +101,19 @@ export default class RoomFeed extends React.Component {
   }
 
   render () {
+    console.log("RENDERING ROOM FEED COMPONENT");
     const { currentUser, room, users } = this.props;
     const { usersSearchIsOpen } = this.state;
+    console.log({ messages: this.props.messages.length });
     const messages = this.props.messages[0] && this.props.messages.map(
       message =>
       <MessageContainer key={message.id}
-        user={users[message.userId]}
-        message={message}
-        isNew={currentUser.lastReadByRoomIds[room.id] < message.id}/>
+        user={users[message.user_id]}
+        message={message} />
     );
-    const roomUsers = room.userIds.filter(
+    const roomUsers = room.user_ids.filter(
       id => id !== currentUser.id
-    ).map(id => users[id].displayname || users[id].username).join(', ');
+    ).map(id => users[id].displayname || users[id].email).join(', ');
 
     return (
       <div className='feed'>

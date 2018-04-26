@@ -18,6 +18,11 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def search
+    @users = User.search params[:query]
+    render :index
+  end
+
   private
 
   def user_params

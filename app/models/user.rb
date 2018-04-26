@@ -4,6 +4,8 @@ class User < ApplicationRecord
   validates :email, :password_digest, presence: true
   validates :displayname, presence: true, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+  
+  attr_reader :password
 
   has_many :channel_subscriptions,
     primary_key: :id,
@@ -22,8 +24,11 @@ class User < ApplicationRecord
 
     has_many :messages
 
-  attr_reader :password
-
+  def self.search(query)
+    self.where("email ILIKE ? OR displayname ILIKE ?",
+               "%#{query}%",
+               "%#{query}%")
+  end
 
   # ---------- Auth stuff ----------
   def self.find_by_credentials(email, password)
@@ -67,13 +72,13 @@ class User < ApplicationRecord
 
   # # ---------- Room stuff ----------
 
-  # def direct_message_directmessages
-  #   self.directmessages.select { |room| room.users.length == 2 }
-  # end
+  def direct_message_rooms
+    self.directmessages.select { |room| room.users.length == 2 }
+  end
 
-  # def dm_user_ids
-  #   self.direct_message_directmessages.map do |dmr|
-  #     dmr.user_ids.reject { |id| id == self.id }[0]
-  #   end
-  # end
+  def dm_user_ids
+    self.direct_message_rooms.map do |room|
+      room.user_ids.reject { |id| id == self.id }[0]
+    end
+  end
 end

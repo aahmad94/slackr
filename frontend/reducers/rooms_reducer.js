@@ -3,7 +3,7 @@ import merge from 'lodash/merge';
 import {
   RECEIVE_ROOM, REMOVE_ROOM, RECEIVE_ROOMS_AND_USERS
 } from '../actions/rooms/rooms_actions';
-import { RECEIVE_CURRENT_USER } from '../../actions/session';
+import { RECEIVE_CURRENT_USER } from '../actions/session';
 
 const roomsReducer = (state = {}, action) => {
   Object.freeze(state);
