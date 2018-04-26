@@ -2,7 +2,7 @@
 
 [Slackr Live][heroku]
 
-[heroku]: http:/wookiee.herokuapp.com
+[heroku]: www.slackr.us
 
 slackr is a web application clone of Slack developed with Rails and React/Redux.
 
