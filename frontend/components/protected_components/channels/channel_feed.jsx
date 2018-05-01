@@ -24,7 +24,6 @@ class ChannelFeed extends Component {
   }
 
   componentDidMount() {
-    console.log("CHANNELS - IN COMPONENT DID MOUNT");
     const channelId = this.props.match.params.channelId;
     Promise.all([
       this.props.fetchChannelMessagesWithUsers(channelId),
