@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import Message from '../message/message'; 
+import Message from '../message/message_container'; 
 
 
 class ChannelFeed extends Component {

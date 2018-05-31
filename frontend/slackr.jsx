@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
+// temporarily require test actions
 import * as ChannelsActions from './actions/channels';
 import * as RoomsActions from './actions/rooms/rooms_actions';
 import * as RoomsUtils from './actions/rooms/rooms_utils';
@@ -29,12 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
   
   // tests here
-  window.store = store;
-  window.searchChannels = ChannelsActions.searchChannels;
-  window.createRoom = RoomsActions.createRoom;
-  window.leaveRoom = RoomsActions.leaveRoom;
-  window.addUser = RoomsActions.addUser;
-  window.fetchRoomsAndUsers = RoomsUtils.fetchRoomsAndUsers;
+  // window.store = store;
+  // window.searchChannels = ChannelsActions.searchChannels;
+  // window.createRoom = RoomsActions.createRoom;
+  // window.leaveRoom = RoomsActions.leaveRoom;
+  // window.addUser = RoomsActions.addUser;
+  // window.fetchRoomsAndUsers = RoomsUtils.fetchRoomsAndUsers;
 
   ReactDOM.render(<Root store = {store} />, root);
 });

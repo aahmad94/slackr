@@ -1,6 +1,7 @@
 import React from 'react';
+import EditMessage from './edit_message';
 
-export default ({user, message}) => {
+export default ({user, message, editMessage}) => {
   if (!user) {
     return (<div></div>);
   } else {
@@ -12,6 +13,7 @@ export default ({user, message}) => {
         <p className="timestamp">{new Date(message.created_at).toLocaleString()}</p>
         <p className="msg-body">{message.body}</p>
       </li>
+        <EditMessage editMessage={editMessage} message={message}/>
     </div>
   );
   }

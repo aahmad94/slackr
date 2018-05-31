@@ -3,7 +3,14 @@ import * as MessageUtils from '../utils/message';
 export const RECEIVE_MESSAGE = 'RECEIVE_MESSAGE';
 export const RECEIVE_MESSAGES = 'RECEIVE_MESSAGES';
 export const RECEIVE_MESSAGES_WITH_USERS = 'RECEIVE_MESSAGES_WITH_USERS';
+export const EDIT_MESSAGE = 'EDIT_MESSAGE';
 
+const editMessageAction = (newMessage) => {
+  return {
+    type: EDIT_MESSAGE,
+    newMessage
+  };
+};
 
 export const receiveMessage = (message) => {
   return {
@@ -49,4 +56,8 @@ export const fetchRoomMessagesWithUsers = roomId => dispatch => (
   MessageUtils.fetchRoomMessagesWithUsers(roomId).then(
     data => dispatch(receiveMessagesWithUsers(data))
   )
+);
+
+export const editMessage = newMessage => dispatch => (
+  dispatch(editMessageAction(newMessage))
 );
