@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 import {
   searchChannels,
@@ -26,7 +27,7 @@ const mapDispatchToProps = dispatch => ({
   addSubscriberToChannel: channelId => dispatch(addSubscriberToChannel(channelId))
 });
 
-export default connect(
+export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(ChannelSearch);
+)(ChannelSearch));

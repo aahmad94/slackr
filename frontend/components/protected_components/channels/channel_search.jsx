@@ -39,7 +39,8 @@ export default class ChannelSearch extends React.Component {
       addSubscriberToChannel,
       searchChannels,
       currentUser,
-      closeModal
+      closeModal,
+      history
     } = this.props;
     const { query } = this.state;
     return (
@@ -67,7 +68,10 @@ export default class ChannelSearch extends React.Component {
               channel={result}
               addSubscriberToChannel={() =>
                 addSubscriberToChannel(result.id).then(
-                  () => searchChannels(query)
+                  () => {
+                    closeModal();
+                    history.replace(`messages/channels/${result.id}`);
+                  }
                 )}
               currentUser={currentUser} />
           )}
