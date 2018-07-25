@@ -23,7 +23,7 @@
   transition: box-shadow 0.3s;
 }
 
-// channel search modal
+// ----------------- channel search modal -----------------
 .channel-search-input {
   padding-left: 10px;
   padding-right: 10px;
@@ -39,16 +39,53 @@
   border: 1px solid #333333;
 }
 
-// .class-search-modal-title {
-//   font-size: 1.5em;
-// }
+.channel-search-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 5px;
+  border-radius: 3px;
+}
 
-// // create channel form modal
-// .create-channel-form label {
-//   font-size: 1.5em;
-//   font-weight: bold;
-// }
+.channel-search-item:nth-child(odd) {
+  background: #E3E4E6;
+}
 
+.channel-search-item:nth-child(even) {
+  background: #bbb;
+}
+
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 2.5px;
+}
+
+.enabled, .disabled {
+  display: flex;
+  align-items: center;
+  max-width: 120px;
+  padding: 2.5px 5px;
+  background: #1c299d;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+  border: none;
+  border-radius: .25rem;
+  box-shadow: none;
+}
+
+.enabled:active, .disabled:active {
+  box-shadow: 0 1px #bbbbbb;
+  transform: translateY(1px);
+}
+
+// ----------------- create channel modal -----------------
 .create-channel-input {
   padding-left: 10px;
   padding-right: 10px;
