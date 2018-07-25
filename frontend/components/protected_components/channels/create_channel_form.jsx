@@ -10,8 +10,8 @@ export default class CreateChannelForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const standardized = this.state.channel_name.replace(/\s+/g, "");
-    this.props.createChannel({ channel_name: standardized })
+    const stdName = this.state.channel_name.replace(/\s+/g, "");
+    this.props.createChannel({ channel_name: stdName })
     .then((channel) => {
       this.props.addSubscriberToChannel(channel.id);
       this.props.history.push(`/messages/channels/${channel.id}/`);
